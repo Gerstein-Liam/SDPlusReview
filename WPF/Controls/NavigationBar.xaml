@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="WPF.Controls.NavigationBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF.Controls"
+              xmlns:converters ="clr-namespace:WPF.Converters"
+              xmlns:viewmodels="clr-namespace:WPF.ViewModels"
+                       xmlns:nav="clr-namespace:WPF.State.Navigators"
+      mc:Ignorable="d"
+      d:DataContext="{d:DesignInstance viewmodels:MainWindowViewModel}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <converters:EqualValueToParameterConverter x:Key="EqualValueToParameterConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="SD Plus Demo" Padding="10" FontSize="14" Foreground="White" Background="{StaticResource BrushPrimary1}" />
+
+        <Grid Grid.Row="1" RenderOptions.EdgeMode="Aliased" Background="{StaticResource BrushPrimary2}"  >
+            <Grid.Resources>
+                <Style TargetType="RadioButton" BasedOn="{StaticResource NavButton}"/>
+
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <RadioButton Grid.Column="0" Content="HOME" 
+                        IsChecked="{Binding Navigator.CurrentViewModel,Mode=OneWay,Converter={StaticResource EqualValueToParameterConverter} ,ConverterParameter={x:Type viewmodels:HomeViewModel}}" 
+                        Command="{Binding UpdateCurrentViewModelCommand}" 
+                        CommandParameter="{x:Static nav:ViewType.Home}"/>
+            <RadioButton Grid.Column="1" Content="DASHBOARD" 
+                         IsChecked="{Binding Navigator.CurrentViewModel,Mode=OneWay,Converter={StaticResource EqualValueToParameterConverter} ,ConverterParameter={x:Type viewmodels:DashboardViewModel}}"
+                        Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Dashboard}"/>
+            <RadioButton Grid.Column="2" Content="SETTINGS" 
+                  IsChecked="{Binding Navigator.CurrentViewModel,Mode=OneWay,Converter={StaticResource EqualValueToParameterConverter} ,ConverterParameter={x:Type viewmodels:SettingsViewModel}}"
+                 Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Settings}"/>
+        </Grid>
+    </Grid>
+</UserControl>

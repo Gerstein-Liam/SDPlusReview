@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="WPF.Views.DashboardItems.PropertiesListingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF.Views.DashboardItems"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Border Background="White" CornerRadius="10" BorderThickness="0.5" BorderBrush="{StaticResource BrushPrimary2}" >
+        <Grid HorizontalAlignment="Stretch"  Panel.ZIndex="2" Margin="10 10 10 10" >
+            <Grid.RowDefinitions >
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="PROPRIETAIRES" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+                <TextBox Width="150" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <Button Content="+" Grid.Column="2" Command="{Binding AddExploitation}" HorizontalAlignment="Right"/>
+                <Button Content="-" Grid.Column="3" Command="{Binding AddExploitation}" HorizontalAlignment="Right"/>
+            </Grid>
+            <ListView Grid.Row="2" x:Name="OwnerListContainer" ItemsSource="{Binding ListViewModel.ProprietaryList}" ScrollViewer.HorizontalScrollBarVisibility="Hidden"  SelectedItem="{Binding ListViewModel.SelectedProp}"   >
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+                        <Border  Width="{Binding ActualWidth,ElementName=OwnerListContainer}" Margin="2">
+                            <TextBlock  Text="{Binding Name}"/>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid Grid.Row="3">
+                <Label Content="PROPRIETES" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            </Grid>
+            <ListView Grid.Row="4"  x:Name="ExploitationListContainer" ItemsSource="{Binding ListViewModel.SelectedProp.ExploitationList, Mode=TwoWay}" ScrollViewer.HorizontalScrollBarVisibility="Hidden"  SelectedItem="{Binding ListViewModel.SelectedProp.SelectedExploitation}"  >
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+                        <Border BorderBrush="LightGray"  BorderThickness="2" Width="{Binding ActualWidth,ElementName=ExploitationListContainer}" HorizontalAlignment="Center"
+               >
+                            <Grid >
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="NOM" Grid.Row="0" Grid.Column="0"/>
+                                <Label Content="LOCALISATION" Grid.Row="1" Grid.Column="0"/>
+                                <Label Content="SURFACE" Grid.Row="2" Grid.Column="0"/>
+                                <Label Content="VERTICES" Grid.Row="3" Grid.Column="0"/>
+                                <Label Content="VIEW SCALE" Grid.Row="4" Grid.Column="0"/>
+                                <Label Content="{Binding Name}" Grid.Row="0" Grid.Column="1"/>
+                                <StackPanel  Grid.Row="1" Grid.Column="1">
+                                    <Label Content="{Binding CenterX}"/>
+                                    <Label Content="{Binding CenterY}"/>
+                                </StackPanel>
+                                <Label Content="{Binding Area}" Grid.Row="2" Grid.Column="1"/>
+                                <Label Content="{Binding VerticesCount ,Mode=TwoWay}" Grid.Row="3" Grid.Column="1"/>
+                                <Label Content="{Binding ViewScale}" Grid.Row="4" Grid.Column="1"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Border>
+</UserControl>

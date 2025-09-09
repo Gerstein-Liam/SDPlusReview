@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="WPF.Views.DashboardItems.DebugPanelView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF.Views.DashboardItems"
+             mc:Ignorable="d" 
+           
+                     xmlns:viewmodels="clr-namespace:WPF.ViewModels"
+  d:DataContext="{d:DesignInstance viewmodels:DashboardViewModel}"
+             d:DesignHeight="100" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Column="0" Command="{Binding DumpAppDataBt}" Content="Dump ListModels Datas"/>
+        <Button Grid.Column="1" Command="{Binding DumpListViewModelBt}" Content="Dump ListViewModel Datas"/>
+        <Button Grid.Column="2" Command="{Binding DumpMapCollectionlBt}" Content="Dump MapViewModel Datas" />
+        <Button Grid.Column="3" Command="{Binding ClearAppDataBt}" Background="Red" Content="Clear ListModels" />
+    </Grid>
+</UserControl>
