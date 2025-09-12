@@ -4,74 +4,55 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPF.Views.DashboardItems"
-             mc:Ignorable="d" 
+             xmlns:materialIcons="clr-namespace:Material.Icons.WPF;assembly=Material.Icons.WPF"
+                 xmlns:viewmodels="clr-namespace:WPF.ViewModels.DashboardItems"
+     mc:Ignorable="d"
+     d:DataContext="{d:DesignInstance viewmodels:SearchAdressViewModel}"
              d:DesignHeight="900" d:DesignWidth="500">
-    <Grid HorizontalAlignment="Stretch" Background="White" Panel.ZIndex="2" >
-        <Grid.RowDefinitions >
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="200"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="400"/>
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Label Content="Propriétaires" HorizontalAlignment="Left"/>
-            <Button Content="Remplir List" Command="{Binding FillList }" HorizontalAlignment="Center"/>
-            <Button Content="Effacer List" Command="{Binding ClearList }" HorizontalAlignment="Right"/>
-            <Button Content="DB GetAll" Command="{Binding ClearList }" HorizontalAlignment="Right"/>
+
+
+
+
+    <Border Background="White" CornerRadius="10" BorderThickness="0.5" BorderBrush="{StaticResource BrushPrimary2}" >
+        <Grid HorizontalAlignment="Stretch"  Panel.ZIndex="2" Margin="10 10 10 10"  x:Name="ListContainer">
+            <Grid.RowDefinitions >
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+            </Grid>
+            <Grid Grid.Row="1" Margin="0 0 0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="AUTO"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+
+                </Grid.ColumnDefinitions>
+                <Label Content="ADRESSES" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+                <TextBox  Grid.Column="1"  Text="{Binding AdressToSearch}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                <Button  Content="{materialIcons:MaterialIconExt Kind=Search}" Command="{Binding SearchAdressDBCommandBt}"  Grid.Column="2"  HorizontalAlignment="Right"/>
+
+            </Grid>
+            <ListView Grid.Row="2" ItemsSource="{Binding SearchResults}" ScrollViewer.HorizontalScrollBarVisibility="Hidden"  SelectedItem="{Binding SelectedAdress}"   >
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+                        <Border Background="LightBlue" Width="{Binding ActualWidth,ElementName=AdressListContainer}" Margin="10">
+                            <Grid  >
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="{Binding Adress}"/>
+                                <TextBox Grid.Row="1" Text="{Binding CoordinatesAsString ,Mode=OneWay}"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
-        <ListView Grid.Row="1" x:Name="OwnerListContainer" ItemsSource="{Binding ListViewModel.ProprietaryList}" ScrollViewer.HorizontalScrollBarVisibility="Hidden"  SelectedItem="{Binding ListViewModel.SelectedProp}"   >
-            <ListView.ItemTemplate>
-                <DataTemplate >
-                    <Border Background="LightBlue" Width="{Binding ActualWidth,ElementName=OwnerListContainer}" Margin="10">
-                        <Grid  >
-                            <Grid.RowDefinitions >
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="{Binding Name}"/>
-                        </Grid>
-                    </Border>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <Grid Grid.Row="2">
-            <Label Content="Exploitation" HorizontalAlignment="Left"/>
-            <Button Content="Ajouter une exploitation" Command="{Binding AddExploitation}" HorizontalAlignment="Right"/>
-        </Grid>
-        <ListView Grid.Row="3" x:Name="ExploitationListContainer" ItemsSource="{Binding ListViewModel.SelectedProp.ExploitationList, Mode=TwoWay}" ScrollViewer.HorizontalScrollBarVisibility="Hidden"  SelectedItem="{Binding ListViewModel.SelectedProp.SelectedExploitation}"  >
-            <ListView.ItemTemplate>
-                <DataTemplate >
-                    <Border BorderBrush="LightGray"  BorderThickness="2" Width="{Binding ActualWidth,ElementName=ExploitationListContainer}" HorizontalAlignment="Center"
-                 >
-                        <Grid >
-                            <Grid.RowDefinitions >
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Label Content="NOM" Grid.Row="0" Grid.Column="0"/>
-                            <Label Content="LOCALISATION" Grid.Row="1" Grid.Column="0"/>
-                            <Label Content="SURFACE" Grid.Row="2" Grid.Column="0"/>
-                            <Label Content="VERTICES" Grid.Row="3" Grid.Column="0"/>
-                            <Label Content="VIEW SCALE" Grid.Row="4" Grid.Column="0"/>
-                            <Label Content="{Binding Name}" Grid.Row="0" Grid.Column="1"/>
-                            <StackPanel  Grid.Row="1" Grid.Column="1">
-                                <Label Content="{Binding CenterX}"/>
-                                <Label Content="{Binding CenterY}"/>
-                            </StackPanel>
-                            <Label Content="{Binding Area}" Grid.Row="2" Grid.Column="1"/>
-                            <Label Content="{Binding VerticesCount ,Mode=TwoWay}" Grid.Row="3" Grid.Column="1"/>
-                            <Label Content="{Binding ViewScale}" Grid.Row="4" Grid.Column="1"/>
-                        </Grid>
-                    </Border>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </Grid>
+    </Border>
+
+
+
 </UserControl>

@@ -11,9 +11,9 @@ namespace DOMAIN
 
         public string ID { get; set; } = Guid.NewGuid().ToString();
 
-        public string OwnerID { get; set; }
-        public string PropertyName { get; set; }
-        public string OwnerName { get; set; }
+        public string OwnerID { get; set; } = "-";
+        public string PropertyName { get; set; }= "-";
+        public string OwnerName { get; set; } = "-";
 
         public List<MapPointDto>? Vertices { get; set; } = new List<MapPointDto>();
 

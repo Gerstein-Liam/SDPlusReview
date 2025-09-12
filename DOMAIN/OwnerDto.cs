@@ -12,7 +12,7 @@ namespace DOMAIN
 
         public string ID { get; set; } = Guid.NewGuid().ToString();
 
-        public string OwnerName { get; set; }
+        public string OwnerName { get; set; }  ="-";
 
         public List<PropertyDto>? Properties { get; set; } = new List<PropertyDto>();
 

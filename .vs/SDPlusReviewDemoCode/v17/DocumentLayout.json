@@ -1,0 +1,753 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\views\\dashboardview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\views\\dashboardview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\views\\dashboarditems\\searchadressview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\views\\dashboarditems\\searchadressview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\views\\homeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\views\\homeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\views\\settingsview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\views\\settingsview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\viewmodels\\settingsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\viewmodels\\settingsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\commands\\generics\\actioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\commands\\generics\\actioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\controls\\navigationbar.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\controls\\navigationbar.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\customarcgislibrary\\exampleusage\\mapviewcustomcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\customarcgislibrary\\exampleusage\\mapviewcustomcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\customarcgislibrary\\exampleusage\\mapviewcustomcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\customarcgislibrary\\exampleusage\\mapviewcustomcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\customarcgislibrary\\exampleusage\\concretemapviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\customarcgislibrary\\exampleusage\\concretemapviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\customarcgislibrary\\lib\\abstractmapviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\customarcgislibrary\\lib\\abstractmapviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\customarcgislibrary\\lib\\drawablemapviewbasecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\customarcgislibrary\\lib\\drawablemapviewbasecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\customarcgislibrary\\lib\\drawablemapviewbasecontrol_facade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\customarcgislibrary\\lib\\drawablemapviewbasecontrol_facade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\customarcgislibrary\\lib\\arcgiscustomevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\customarcgislibrary\\lib\\arcgiscustomevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\delegates\\delegates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\delegates\\delegates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\models\\property.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\models\\property.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\models\\owner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\models\\owner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\models\\map_point.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\models\\map_point.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\models\\fakedb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\models\\fakedb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\models\\appdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\models\\appdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\services\\httpservices\\ibackendhttpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\services\\httpservices\\ibackendhttpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\services\\httpservices\\backendhttpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\services\\httpservices\\backendhttpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\commands\\specifics\\getallfromapicommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\commands\\specifics\\getallfromapicommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\services\\httpservices\\backendhttpclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\services\\httpservices\\backendhttpclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\state\\context\\iapplicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\state\\context\\iapplicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\state\\context\\settingscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\state\\context\\settingscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\state\\navigators\\inavigator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\state\\navigators\\inavigator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\state\\navigators\\irenavigator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\state\\navigators\\irenavigator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\styles\\navigationbar.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\styles\\navigationbar.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\viewmodels\\dashboarditems\\listviews_viewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\viewmodels\\dashboarditems\\listviews_viewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\viewmodels\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\viewmodels\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\viewmodels\\dashboardviewmodel_debugarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\viewmodels\\dashboardviewmodel_debugarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\viewmodels\\dashboardviewmodel_events.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\viewmodels\\dashboardviewmodel_events.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\views\\dashboarditems\\propertieslistingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\views\\dashboarditems\\propertieslistingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\views\\dashboarditems\\debugpanelview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\views\\dashboarditems\\debugpanelview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\views\\dashboarditems\\backendstatusbannerview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\views\\dashboarditems\\backendstatusbannerview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\commands\\specifics\\setalltoapicommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\commands\\specifics\\setalltoapicommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\models\\mappers\\imodelsmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\models\\mappers\\imodelsmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\models\\mappers\\modelsmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\models\\mappers\\modelsmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A417209B-F74B-4C2F-BB09-A2D11A39F988}|DOMAIN\\DOMAIN.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\domain\\ownerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A417209B-F74B-4C2F-BB09-A2D11A39F988}|DOMAIN\\DOMAIN.csproj|solutionrelative:domain\\ownerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A417209B-F74B-4C2F-BB09-A2D11A39F988}|DOMAIN\\DOMAIN.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\domain\\propertydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A417209B-F74B-4C2F-BB09-A2D11A39F988}|DOMAIN\\DOMAIN.csproj|solutionrelative:domain\\propertydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\wpf\\commands\\specifics\\updatecurrentviewmodelcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6B4CB2F-91A0-400B-8844-4DC59A086C58}|WPF\\WPF.csproj|solutionrelative:wpf\\commands\\specifics\\updatecurrentviewmodelcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 773,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeView.xaml",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Views\\HomeView.xaml",
+              "RelativeDocumentMoniker": "WPF\\Views\\HomeView.xaml",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Views\\HomeView.xaml",
+              "RelativeToolTip": "WPF\\Views\\HomeView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-09T04:55:11.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SettingsView.xaml",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Views\\SettingsView.xaml",
+              "RelativeDocumentMoniker": "WPF\\Views\\SettingsView.xaml",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Views\\SettingsView.xaml",
+              "RelativeToolTip": "WPF\\Views\\SettingsView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-09T04:48:59.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MapViewCustomControl.xaml",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\CustomArcGisLibrary\\ExampleUsage\\MapViewCustomControl.xaml",
+              "RelativeDocumentMoniker": "WPF\\CustomArcGisLibrary\\ExampleUsage\\MapViewCustomControl.xaml",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\CustomArcGisLibrary\\ExampleUsage\\MapViewCustomControl.xaml",
+              "RelativeToolTip": "WPF\\CustomArcGisLibrary\\ExampleUsage\\MapViewCustomControl.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-09T04:45:55.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ConcreteMapViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\CustomArcGisLibrary\\ExampleUsage\\ConcreteMapViewModel.cs",
+              "RelativeDocumentMoniker": "WPF\\CustomArcGisLibrary\\ExampleUsage\\ConcreteMapViewModel.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\CustomArcGisLibrary\\ExampleUsage\\ConcreteMapViewModel.cs",
+              "RelativeToolTip": "WPF\\CustomArcGisLibrary\\ExampleUsage\\ConcreteMapViewModel.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T04:45:52.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MapViewCustomControl.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\CustomArcGisLibrary\\ExampleUsage\\MapViewCustomControl.cs",
+              "RelativeDocumentMoniker": "WPF\\CustomArcGisLibrary\\ExampleUsage\\MapViewCustomControl.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\CustomArcGisLibrary\\ExampleUsage\\MapViewCustomControl.cs",
+              "RelativeToolTip": "WPF\\CustomArcGisLibrary\\ExampleUsage\\MapViewCustomControl.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAFAAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T04:44:12.778Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SettingsViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\ViewModels\\SettingsViewModel.cs",
+              "RelativeDocumentMoniker": "WPF\\ViewModels\\SettingsViewModel.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\ViewModels\\SettingsViewModel.cs",
+              "RelativeToolTip": "WPF\\ViewModels\\SettingsViewModel.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwB8AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T04:36:22.252Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SearchAdressView.xaml",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Views\\DashboardItems\\SearchAdressView.xaml",
+              "RelativeDocumentMoniker": "WPF\\Views\\DashboardItems\\SearchAdressView.xaml",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Views\\DashboardItems\\SearchAdressView.xaml",
+              "RelativeToolTip": "WPF\\Views\\DashboardItems\\SearchAdressView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-09T04:35:06.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DashboardView.xaml",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Views\\DashboardView.xaml",
+              "RelativeDocumentMoniker": "WPF\\Views\\DashboardView.xaml",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Views\\DashboardView.xaml",
+              "RelativeToolTip": "WPF\\Views\\DashboardView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-09T01:16:04.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NavigationBar.xaml",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Controls\\NavigationBar.xaml",
+              "RelativeDocumentMoniker": "WPF\\Controls\\NavigationBar.xaml",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Controls\\NavigationBar.xaml",
+              "RelativeToolTip": "WPF\\Controls\\NavigationBar.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-09T04:46:07.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ActionCommand.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Commands\\Generics\\ActionCommand.cs",
+              "RelativeDocumentMoniker": "WPF\\Commands\\Generics\\ActionCommand.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Commands\\Generics\\ActionCommand.cs",
+              "RelativeToolTip": "WPF\\Commands\\Generics\\ActionCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T04:46:16.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DrawableMapViewBaseControl.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\CustomArcGisLibrary\\Lib\\DrawableMapViewBaseControl.cs",
+              "RelativeDocumentMoniker": "WPF\\CustomArcGisLibrary\\Lib\\DrawableMapViewBaseControl.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\CustomArcGisLibrary\\Lib\\DrawableMapViewBaseControl.cs",
+              "RelativeToolTip": "WPF\\CustomArcGisLibrary\\Lib\\DrawableMapViewBaseControl.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T04:45:20.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DrawableMapViewBaseControl_Facade.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\CustomArcGisLibrary\\Lib\\DrawableMapViewBaseControl_Facade.cs",
+              "RelativeDocumentMoniker": "WPF\\CustomArcGisLibrary\\Lib\\DrawableMapViewBaseControl_Facade.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\CustomArcGisLibrary\\Lib\\DrawableMapViewBaseControl_Facade.cs",
+              "RelativeToolTip": "WPF\\CustomArcGisLibrary\\Lib\\DrawableMapViewBaseControl_Facade.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAiwFEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T04:44:01.191Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ArcGisCustomEvents.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\CustomArcGisLibrary\\Lib\\ArcGisCustomEvents.cs",
+              "RelativeDocumentMoniker": "WPF\\CustomArcGisLibrary\\Lib\\ArcGisCustomEvents.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\CustomArcGisLibrary\\Lib\\ArcGisCustomEvents.cs",
+              "RelativeToolTip": "WPF\\CustomArcGisLibrary\\Lib\\ArcGisCustomEvents.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAC4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T04:43:34.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AbstractMapViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\CustomArcGisLibrary\\Lib\\AbstractMapViewModel.cs",
+              "RelativeDocumentMoniker": "WPF\\CustomArcGisLibrary\\Lib\\AbstractMapViewModel.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\CustomArcGisLibrary\\Lib\\AbstractMapViewModel.cs",
+              "RelativeToolTip": "WPF\\CustomArcGisLibrary\\Lib\\AbstractMapViewModel.cs",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAYwCYAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T04:43:24.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Delegates.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Delegates\\Delegates.cs",
+              "RelativeDocumentMoniker": "WPF\\Delegates\\Delegates.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Delegates\\Delegates.cs",
+              "RelativeToolTip": "WPF\\Delegates\\Delegates.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T04:43:20.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Owner.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Models\\Owner.cs",
+              "RelativeDocumentMoniker": "WPF\\Models\\Owner.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Models\\Owner.cs",
+              "RelativeToolTip": "WPF\\Models\\Owner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T04:43:16.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "IApplicationContext.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\State\\Context\\IApplicationContext.cs",
+              "RelativeDocumentMoniker": "WPF\\State\\Context\\IApplicationContext.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\State\\Context\\IApplicationContext.cs",
+              "RelativeToolTip": "WPF\\State\\Context\\IApplicationContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T04:37:31.214Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "BackendHTTPClient.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Services\\HttpServices\\BackendHTTPClient.cs",
+              "RelativeDocumentMoniker": "WPF\\Services\\HttpServices\\BackendHTTPClient.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Services\\HttpServices\\BackendHTTPClient.cs",
+              "RelativeToolTip": "WPF\\Services\\HttpServices\\BackendHTTPClient.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAtwCMAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T02:23:48.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "BackendHTTPService.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Services\\HttpServices\\BackendHTTPService.cs",
+              "RelativeDocumentMoniker": "WPF\\Services\\HttpServices\\BackendHTTPService.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Services\\HttpServices\\BackendHTTPService.cs",
+              "RelativeToolTip": "WPF\\Services\\HttpServices\\BackendHTTPService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAmwCsAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T01:22:14.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "GetAllFromApiCommand.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Commands\\Specifics\\GetAllFromApiCommand.cs",
+              "RelativeDocumentMoniker": "WPF\\Commands\\Specifics\\GetAllFromApiCommand.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Commands\\Specifics\\GetAllFromApiCommand.cs",
+              "RelativeToolTip": "WPF\\Commands\\Specifics\\GetAllFromApiCommand.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAAB8AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T01:18:01.715Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "IBackendHTTPService.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Services\\HttpServices\\IBackendHTTPService.cs",
+              "RelativeDocumentMoniker": "WPF\\Services\\HttpServices\\IBackendHTTPService.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Services\\HttpServices\\IBackendHTTPService.cs",
+              "RelativeToolTip": "WPF\\Services\\HttpServices\\IBackendHTTPService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T01:23:44.775Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AppData.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Models\\AppData.cs",
+              "RelativeDocumentMoniker": "WPF\\Models\\AppData.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Models\\AppData.cs",
+              "RelativeToolTip": "WPF\\Models\\AppData.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T01:23:12.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "FakeDb.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Models\\FakeDb.cs",
+              "RelativeDocumentMoniker": "WPF\\Models\\FakeDb.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Models\\FakeDb.cs",
+              "RelativeToolTip": "WPF\\Models\\FakeDb.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwBoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T03:21:28.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Property.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Models\\Property.cs",
+              "RelativeDocumentMoniker": "WPF\\Models\\Property.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Models\\Property.cs",
+              "RelativeToolTip": "WPF\\Models\\Property.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAA3wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T03:21:30.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "SettingsContext.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\State\\Context\\SettingsContext.cs",
+              "RelativeDocumentMoniker": "WPF\\State\\Context\\SettingsContext.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\State\\Context\\SettingsContext.cs",
+              "RelativeToolTip": "WPF\\State\\Context\\SettingsContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T04:37:08.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Map_Point.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Models\\Map_Point.cs",
+              "RelativeDocumentMoniker": "WPF\\Models\\Map_Point.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Models\\Map_Point.cs",
+              "RelativeToolTip": "WPF\\Models\\Map_Point.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T03:21:29.304Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "INavigator.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\State\\Navigators\\INavigator.cs",
+              "RelativeDocumentMoniker": "WPF\\State\\Navigators\\INavigator.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\State\\Navigators\\INavigator.cs",
+              "RelativeToolTip": "WPF\\State\\Navigators\\INavigator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T04:36:55.408Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "IRenavigator.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\State\\Navigators\\IRenavigator.cs",
+              "RelativeDocumentMoniker": "WPF\\State\\Navigators\\IRenavigator.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\State\\Navigators\\IRenavigator.cs",
+              "RelativeToolTip": "WPF\\State\\Navigators\\IRenavigator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T04:36:53.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "NavigationBar.xaml",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Styles\\NavigationBar.xaml",
+              "RelativeDocumentMoniker": "WPF\\Styles\\NavigationBar.xaml",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Styles\\NavigationBar.xaml",
+              "RelativeToolTip": "WPF\\Styles\\NavigationBar.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-09T04:36:48.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ListViews_ViewModels.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\ViewModels\\DashboardItems\\ListViews_ViewModels.cs",
+              "RelativeDocumentMoniker": "WPF\\ViewModels\\DashboardItems\\ListViews_ViewModels.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\ViewModels\\DashboardItems\\ListViews_ViewModels.cs",
+              "RelativeToolTip": "WPF\\ViewModels\\DashboardItems\\ListViews_ViewModels.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAgwCcAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T04:36:37.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "MainWindowViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\ViewModels\\MainWindowViewModel.cs",
+              "RelativeDocumentMoniker": "WPF\\ViewModels\\MainWindowViewModel.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\ViewModels\\MainWindowViewModel.cs",
+              "RelativeToolTip": "WPF\\ViewModels\\MainWindowViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAmwEMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T04:36:21.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "HomeViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\ViewModels\\HomeViewModel.cs",
+              "RelativeDocumentMoniker": "WPF\\ViewModels\\HomeViewModel.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\ViewModels\\HomeViewModel.cs",
+              "RelativeToolTip": "WPF\\ViewModels\\HomeViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T04:35:51.834Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "DashboardViewModel_DebugArea.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\ViewModels\\DashboardViewModel_DebugArea.cs",
+              "RelativeDocumentMoniker": "WPF\\ViewModels\\DashboardViewModel_DebugArea.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\ViewModels\\DashboardViewModel_DebugArea.cs",
+              "RelativeToolTip": "WPF\\ViewModels\\DashboardViewModel_DebugArea.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T04:35:25.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "PropertiesListingView.xaml",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Views\\DashboardItems\\PropertiesListingView.xaml",
+              "RelativeDocumentMoniker": "WPF\\Views\\DashboardItems\\PropertiesListingView.xaml",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Views\\DashboardItems\\PropertiesListingView.xaml",
+              "RelativeToolTip": "WPF\\Views\\DashboardItems\\PropertiesListingView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-09T04:34:46.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "DebugPanelView.xaml",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Views\\DashboardItems\\DebugPanelView.xaml",
+              "RelativeDocumentMoniker": "WPF\\Views\\DashboardItems\\DebugPanelView.xaml",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Views\\DashboardItems\\DebugPanelView.xaml",
+              "RelativeToolTip": "WPF\\Views\\DashboardItems\\DebugPanelView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-09T04:34:44.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "BackendStatusBannerView.xaml",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Views\\DashboardItems\\BackendStatusBannerView.xaml",
+              "RelativeDocumentMoniker": "WPF\\Views\\DashboardItems\\BackendStatusBannerView.xaml",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Views\\DashboardItems\\BackendStatusBannerView.xaml",
+              "RelativeToolTip": "WPF\\Views\\DashboardItems\\BackendStatusBannerView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-09T04:34:37.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "OwnerDto.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\DOMAIN\\OwnerDto.cs",
+              "RelativeDocumentMoniker": "DOMAIN\\OwnerDto.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\DOMAIN\\OwnerDto.cs",
+              "RelativeToolTip": "DOMAIN\\OwnerDto.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAArwBAAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T02:54:13.856Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "DashboardViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\ViewModels\\DashboardViewModel.cs",
+              "RelativeDocumentMoniker": "WPF\\ViewModels\\DashboardViewModel.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\ViewModels\\DashboardViewModel.cs",
+              "RelativeToolTip": "WPF\\ViewModels\\DashboardViewModel.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAADMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T01:18:16.246Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "DashboardViewModel_Events.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\ViewModels\\DashboardViewModel_Events.cs",
+              "RelativeDocumentMoniker": "WPF\\ViewModels\\DashboardViewModel_Events.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\ViewModels\\DashboardViewModel_Events.cs",
+              "RelativeToolTip": "WPF\\ViewModels\\DashboardViewModel_Events.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T03:22:27.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "PropertyDto.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\DOMAIN\\PropertyDto.cs",
+              "RelativeDocumentMoniker": "DOMAIN\\PropertyDto.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\DOMAIN\\PropertyDto.cs",
+              "RelativeToolTip": "DOMAIN\\PropertyDto.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAnwBEAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T02:53:39.803Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "ModelsMapper.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Models\\Mappers\\ModelsMapper.cs",
+              "RelativeDocumentMoniker": "WPF\\Models\\Mappers\\ModelsMapper.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Models\\Mappers\\ModelsMapper.cs",
+              "RelativeToolTip": "WPF\\Models\\Mappers\\ModelsMapper.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAjwF4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T01:31:11.907Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "IModelsMapper.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Models\\Mappers\\IModelsMapper.cs",
+              "RelativeDocumentMoniker": "WPF\\Models\\Mappers\\IModelsMapper.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Models\\Mappers\\IModelsMapper.cs",
+              "RelativeToolTip": "WPF\\Models\\Mappers\\IModelsMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T01:29:16.854Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "SetAllToApiCommand.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Commands\\Specifics\\SetAllToApiCommand.cs",
+              "RelativeDocumentMoniker": "WPF\\Commands\\Specifics\\SetAllToApiCommand.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Commands\\Specifics\\SetAllToApiCommand.cs",
+              "RelativeToolTip": "WPF\\Commands\\Specifics\\SetAllToApiCommand.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAwwCUAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T01:20:16.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "UpdateCurrentViewModelCommand.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Commands\\Specifics\\UpdateCurrentViewModelCommand.cs",
+              "RelativeDocumentMoniker": "WPF\\Commands\\Specifics\\UpdateCurrentViewModelCommand.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\WPF\\Commands\\Specifics\\UpdateCurrentViewModelCommand.cs",
+              "RelativeToolTip": "WPF\\Commands\\Specifics\\UpdateCurrentViewModelCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-09T01:18:00.398Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 ﻿using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.Portal;
 using Esri.ArcGISRuntime.UI;
 using System;
 using System.Collections.Generic;
@@ -103,6 +104,8 @@ namespace WPF.CustomArcGisLibrary.Lib
         public ArcGisCustomEvents ArcGisCustomEvents { get => _eventSystem; set => _eventSystem = value; }
         public Map MapView { get => _map; set => Map = value; }
 
+        private  Action<string, string> _onSelection;
+
 
         protected AbstractMapViewModel()
         {
@@ -114,14 +117,14 @@ namespace WPF.CustomArcGisLibrary.Lib
                 InitialViewpoint = new Viewpoint(new MapPoint(812963.8159509106, 5817673.664758366, SpatialReferences.WebMercator), 5000)
             };
             _eventSystem = new ArcGisCustomEvents();
-            _eventSystem.ViewEvent += GraphicsCollectionChanged;
+            _eventSystem.onCollectionsChanged += GraphicsCollectionChanged;
             ArcGisCustomEvents = _eventSystem;
 
         }
 
 
 
-        protected AbstractMapViewModel(Action<EventData<CustomGraphicItem>> OnGraphicCollectedChangedLister)
+        protected AbstractMapViewModel(Action<EventData<CustomGraphicItem>> OnGraphicCollectedChangedLister,Action<string,string> onSelection)
         {
             MapOverlayCollection = new GraphicsOverlayCollection();
             onGraphicCollectionChangedEvent = OnGraphicCollectedChangedLister;
@@ -131,12 +134,20 @@ namespace WPF.CustomArcGisLibrary.Lib
                 InitialViewpoint = new Viewpoint(new MapPoint(812963.8159509106, 5817673.664758366, SpatialReferences.WebMercator), 5000)
             };
             _eventSystem = new ArcGisCustomEvents();
-            _eventSystem.ViewEvent += GraphicsCollectionChanged;
+            _eventSystem.onCollectionsChanged += GraphicsCollectionChanged;
             ArcGisCustomEvents = _eventSystem;
+  
 
         }
 
-        public void SubscribeToViewEvent(Action<EventData<CustomGraphicItem>> OnGraphicCollectedChangedLister)
+        public void SubscriptOnSelectionEvent(Action<string, string> onSelection)
+        {
+
+            _eventSystem.onSelection = onSelection;
+
+        }
+
+        public void SubscriptOnCollectionChangedEvent(Action<EventData<CustomGraphicItem>> OnGraphicCollectedChangedLister)
         {
 
             onGraphicCollectionChangedEvent = OnGraphicCollectedChangedLister;
@@ -156,7 +167,12 @@ namespace WPF.CustomArcGisLibrary.Lib
         }
         public void SetEditPermissions(bool EditEnable)
         {
-            _eventSystem.InteractionSetRulesChangedFromViewModel(new MapInteractionContext() { AllowAdding = EditEnable });
+            _eventSystem.InteractionSetRulesChangedFromViewModel(new MapInteractionContext() { AllowEditing = EditEnable });
+        }
+
+        public void SetAddPermissions(bool AddEnable)
+        {
+            _eventSystem.InteractionSetRulesChangedFromViewModel(new MapInteractionContext() { AllowAdding = AddEnable });
         }
         #region Camera
         public void CameraCenterOnGraphic(string OverlayGroupId, string ItemID)
@@ -170,6 +186,8 @@ namespace WPF.CustomArcGisLibrary.Lib
         }
         public void CameraCenterOnCustomCoordinatesSystem(double x, double y, double scale = 500)
         {
+            
+            if(scale==0) scale = 500;
             CenterScreen = new Viewpoint(new MapPoint(x, y, SpatialReferences.WebMercator), scale);
             this._eventSystem.ViewPointChanged(CenterScreen);
         }
@@ -241,6 +259,8 @@ namespace WPF.CustomArcGisLibrary.Lib
             {
                 _actionType_ = e.Action.ToString();
                 _graphic_ = (Graphic)e.OldItems[0];
+
+
                 _graphicId_ = _graphic_.Attributes["ID"].ToString();
                 _overlayId_ = _graphic_.Attributes["GID"].ToString();
             }
@@ -248,6 +268,8 @@ namespace WPF.CustomArcGisLibrary.Lib
             {
                 _actionType_ = e.Action.ToString();
                 _graphic_ = (Graphic)e.NewItems[0];
+
+              
                 _graphicId_ = _graphic_.Attributes["ID"].ToString();
                 _overlayId_ = _graphic_.Attributes["GID"].ToString();
             }

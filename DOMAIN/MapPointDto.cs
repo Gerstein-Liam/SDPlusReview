@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace DOMAIN
 {
+   //
+    
     public class MapPointDto
     {
 

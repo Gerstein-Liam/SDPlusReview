@@ -1,6 +1,4 @@
-﻿using ABI.Windows.ApplicationModel.Activation;
-using DOMAIN;
-using Newtonsoft.Json;
+﻿using DOMAIN;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +10,7 @@ using System.Threading.Tasks;
 using WPF.Models;
 using WPF.Models.Mappers;
 
-namespace WPF.Services.HttpServices
+namespace WPF.Services.HttpServices.Backend
 {
  
     public class BackendHTTPService : IBackendHTTPService
@@ -40,9 +38,12 @@ namespace WPF.Services.HttpServices
             using (BackendHTTPClient client = new BackendHTTPClient())
             {
                 string uri = $"api/owner";
-                List<OwnerDto>? ownerDtoList = await client.Get_Async<List<OwnerDto>>("owner");
-                if (ownerDtoList == null) throw new NullReferenceException();
+                List<OwnerDto> ownerDtoList = await client.Get_Async<List<OwnerDto>>("owner");
                 List<Owner> ownerList = _mapper.map(ownerDtoList);
+                if (ownerList == null)
+                {
+                    throw new Exception("The Get All Request Failed");
+                }
                 return ownerList;
             }
         }
@@ -51,9 +52,11 @@ namespace WPF.Services.HttpServices
         {
             List<OwnerDto> ownerListDto = _mapper.map(owners);
             using (BackendHTTPClient client = new BackendHTTPClient())
-            { 
-                string r= await client.Post_Async("owner", JsonConvert.SerializeObject(ownerListDto));
-                return r;
+            {
+           
+
+                return await client.Post_Async("owner", owners);
+
               
             }
         }

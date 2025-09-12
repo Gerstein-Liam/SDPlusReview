@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,22 +31,22 @@ namespace WPF.Models
         {
             proprietary.Properties.Remove(exploitationItem);
         }
-        public void RemoveExploitationCloneAsEntry(Owner proprietary, Property exploitationItem)
+        public void RemoveExploitationCloneAsEntry(Owner owner, Property property)
         {
-            Property? original = proprietary.Properties.Where(x => x.ID == exploitationItem.ID).FirstOrDefault();
-            if (RemoveExploitation != null) RemoveExploitation(proprietary, original!);
+            Property? original = owner.Properties.Where(x => x.ID == property.ID).FirstOrDefault();
+            if (RemoveExploitation != null) RemoveExploitation(owner, original!);
         }
 
 
-        public void RemoveExploitationUsingID(string ProprietryID, Property exploitationItem)
+        public void RemoveExploitationUsingID(string ownerID, Property Property)
         {
 
-          
+            Debug.WriteLine($"owner ID{ownerID} : propertyOwnerId{Property.OwnerID}");
 
-            Owner? Target = Owners.Where(x => x.ID == ProprietryID).FirstOrDefault();
-            if (Target != null)
+            Owner? Owner = Owners.Where(x => x.ID == ownerID).FirstOrDefault();
+            if (Owner != null)
             {
-                RemoveExploitationCloneAsEntry(Target, exploitationItem);
+                RemoveExploitationCloneAsEntry(Owner, Property);
             }
         }
 

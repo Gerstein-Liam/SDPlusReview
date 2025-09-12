@@ -36,6 +36,8 @@ namespace WPF.CustomArcGisLibrary.ExampleUsage
         public Button _StartDrawButton { get; set; }
         public Button _SaveDrawButton { get; set; }
         public Button? _editExploitationBt { get; set; }
+
+        public Label? _editStatusLabel{ get; set; }
         public Button? _deleteExploitationBt { get; set; }
         public TextBox _NewExploitationNameTxtBox { get; set; }
         private bool EditEnable = false;
@@ -52,14 +54,17 @@ namespace WPF.CustomArcGisLibrary.ExampleUsage
             _StartDrawButton = GetTemplateChild("DrawNewExploitationBt") as Button;
             _StartDrawButton.Click += _StartDrawButton_Click;
             _SaveDrawButton = GetTemplateChild("SaveNewExploitationBt") as Button;
-            _SaveDrawButton.Click += _SaveDrawButton_Click;
+            _SaveDrawButton!.Click += _SaveDrawButton_Click;
             _editExploitationBt = GetTemplateChild("EditExploitationBt") as Button;
             _NewExploitationNameTxtBox = GetTemplateChild("NewExploitationName") as TextBox;
             _deleteExploitationBt = GetTemplateChild("DeleteExploitationBt") as Button;
             _deleteExploitationBt!.Click += DeleteExploitationClickHandler;
             _editExploitationBt = GetTemplateChild("EditExploitationBt") as Button;
             _editExploitationBt!.Click += _editExploitationBt_Click;
-            _editExploitationBt.Content = $"Edition:{EditEnable.ToString()}";
+         
+            _editStatusLabel = GetTemplateChild("editStatusLabel") as Label;
+            _editStatusLabel.Content = $"Edit:OFF";
+
             this.KeyDown += SDPlusMap_KeyDown;
         }
         private void _editExploitationBt_Click(object sender, RoutedEventArgs e)
@@ -70,7 +75,9 @@ namespace WPF.CustomArcGisLibrary.ExampleUsage
         {
             EditEnable = !EditEnable;
             DrawableMapView.SetEditMode(EditEnable);
-            _editExploitationBt.Content = $"Edition:{EditEnable.ToString()}";
+    
+
+            _editStatusLabel.Content = !EditEnable?  $"Edit:OFF": $"Edit:ON ";
         }
         private void DeleteExploitationClickHandler(object sender, RoutedEventArgs e)
         {

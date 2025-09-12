@@ -4,10 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPF.Views.DashboardItems"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             xmlns:converters="clr-namespace:WPF.Converters"
+             xmlns:materialIcons="clr-namespace:Material.Icons.WPF;assembly=Material.Icons.WPF"
+             xmlns:viewmodels="clr-namespace:WPF.ViewModels.DashboardItems"
+     mc:Ignorable="d"
+     d:DataContext="{d:DesignInstance viewmodels:ListViews_ViewModels}" 
+             d:DesignHeight="450" d:DesignWidth="800" x:Name="ListingView">
+    <UserControl.Resources>
+        <converters:InverseBooleanToInvisibilityConverter x:Key="InverseBooleanToInvisibilityConverter"/>
+    </UserControl.Resources>
     <Border Background="White" CornerRadius="10" BorderThickness="0.5" BorderBrush="{StaticResource BrushPrimary2}" >
-        <Grid HorizontalAlignment="Stretch"  Panel.ZIndex="2" Margin="10 10 10 10" >
+        <Grid HorizontalAlignment="Stretch"  Panel.ZIndex="2" Margin="10 10 10 10"  x:Name="ListContainer">
             <Grid.RowDefinitions >
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
@@ -17,7 +24,7 @@
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
             </Grid>
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="1" Margin="0 0 0 10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -25,52 +32,84 @@
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
                 <Label Content="PROPRIETAIRES" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
-                <TextBox Width="150" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <Button Content="+" Grid.Column="2" Command="{Binding AddExploitation}" HorizontalAlignment="Right"/>
-                <Button Content="-" Grid.Column="3" Command="{Binding AddExploitation}" HorizontalAlignment="Right"/>
+                <TextBox Width="150" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Left" />
+                <Button  Content="{materialIcons:MaterialIconExt Kind=Add}" Grid.Column="2" Command="{Binding ToggleDebugMode}" HorizontalAlignment="Right"/>
+                <Button  Content="{materialIcons:MaterialIconExt Kind=Delete}" Grid.Column="3" Command="{Binding ToggleDebugMode}" HorizontalAlignment="Right"/>
             </Grid>
-            <ListView Grid.Row="2" x:Name="OwnerListContainer" ItemsSource="{Binding ListViewModel.ProprietaryList}" ScrollViewer.HorizontalScrollBarVisibility="Hidden"  SelectedItem="{Binding ListViewModel.SelectedProp}"   >
+            <ListView Grid.Row="2" x:Name="OwnerListContainer" ItemsSource="{Binding ProprietaryList}" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" SelectedItem="{Binding SelectedProp,Mode=TwoWay}"   >
                 <ListView.ItemTemplate>
                     <DataTemplate >
-                        <Border  Width="{Binding ActualWidth,ElementName=OwnerListContainer}" Margin="2">
-                            <TextBlock  Text="{Binding Name}"/>
-                        </Border>
+                        <Grid Width="{Binding ActualWidth,ElementName=OwnerListContainer}"  >
+                            <Border  Margin="-2 2 2 2" HorizontalAlignment="Stretch" CornerRadius="2" Padding="5" >
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="{Binding Name}" Margin="0 0 0 5"/>
+                                    <TextBlock Grid.Row="1" FontSize="10" HorizontalAlignment="Left" Text="{Binding ID}" Visibility="{Binding DataContext.ShowDebugData,ElementName=ListingView,Converter={StaticResource InverseBooleanToInvisibilityConverter}}"/>
+                                </Grid>
+                            </Border>
+                        </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
             <Grid Grid.Row="3">
-                <Label Content="PROPRIETES" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label Content="PROPRIETES" HorizontalAlignment="Left" VerticalAlignment="Center" />
             </Grid>
-            <ListView Grid.Row="4"  x:Name="ExploitationListContainer" ItemsSource="{Binding ListViewModel.SelectedProp.ExploitationList, Mode=TwoWay}" ScrollViewer.HorizontalScrollBarVisibility="Hidden"  SelectedItem="{Binding ListViewModel.SelectedProp.SelectedExploitation}"  >
+            <ListView Grid.Row="4"  x:Name="ExploitationListContainer" ItemsSource="{Binding SelectedProp.ExploitationList, Mode=TwoWay}" ScrollViewer.HorizontalScrollBarVisibility="Hidden"  SelectedItem="{Binding SelectedExploitation}"  >
                 <ListView.ItemTemplate>
                     <DataTemplate >
                         <Border BorderBrush="LightGray"  BorderThickness="2" Width="{Binding ActualWidth,ElementName=ExploitationListContainer}" HorizontalAlignment="Center"
                >
                             <Grid >
-                                <Grid.RowDefinitions >
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="auto"/>
+                                <Grid.RowDefinitions>
                                     <RowDefinition Height="auto"/>
                                     <RowDefinition Height="auto"/>
                                 </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Label Content="NOM" Grid.Row="0" Grid.Column="0"/>
-                                <Label Content="LOCALISATION" Grid.Row="1" Grid.Column="0"/>
-                                <Label Content="SURFACE" Grid.Row="2" Grid.Column="0"/>
-                                <Label Content="VERTICES" Grid.Row="3" Grid.Column="0"/>
-                                <Label Content="VIEW SCALE" Grid.Row="4" Grid.Column="0"/>
-                                <Label Content="{Binding Name}" Grid.Row="0" Grid.Column="1"/>
-                                <StackPanel  Grid.Row="1" Grid.Column="1">
-                                    <Label Content="{Binding CenterX}"/>
-                                    <Label Content="{Binding CenterY}"/>
-                                </StackPanel>
-                                <Label Content="{Binding Area}" Grid.Row="2" Grid.Column="1"/>
-                                <Label Content="{Binding VerticesCount ,Mode=TwoWay}" Grid.Row="3" Grid.Column="1"/>
-                                <Label Content="{Binding ViewScale}" Grid.Row="4" Grid.Column="1"/>
+                                <Grid Grid.Row="0">
+                                    <Grid.RowDefinitions >
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Content="NOM" Grid.Row="0" Grid.Column="0"/>
+                                    <Label Content="SURFACE"   Grid.Row="1" Grid.Column="0"/>
+                                    <Label Content="{Binding Name}" Grid.Row="0" Grid.Column="1"/>
+                                    <Label Content="{Binding Area}" Grid.Row="1" Grid.Column="1"/>
+                                </Grid>
+                                <Grid Grid.Row="1" Visibility="{Binding DataContext.ShowDebugData,ElementName=ListingView,Converter={StaticResource InverseBooleanToInvisibilityConverter}}">
+                                    <Grid.RowDefinitions >
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Content="LOCALISATION" Grid.Row="0" Grid.Column="0"/>
+                                    <StackPanel  Grid.Row="0" Grid.Column="1">
+                                        <Label Content="{Binding CenterX}"/>
+                                        <Label Content="{Binding CenterY}"/>
+                                    </StackPanel>
+                                    <Label Content="NB VERTICES" Grid.Row="1" Grid.Column="0"/>
+                                    <Label Content="{Binding VerticesCount ,Mode=TwoWay}" Grid.Row="1" Grid.Column="1"/>
+                                    <Label Content="VIEW SCALE" Grid.Row="2" Grid.Column="0"   />
+                                    <Label Content="{Binding ViewScale}"   Grid.Row="2" Grid.Column="1"/>
+                                    <Label Content="ID" Grid.Row="3" Grid.Column="0"   />
+                                    <Label Content="{Binding ID}"   Grid.Row="3" Grid.Column="1"/>
+                                    <Label Content="OWNER ID" Grid.Row="4" Grid.Column="0"   />
+                                    <Label Content="{Binding OwnerID}"   Grid.Row="4" Grid.Column="1"/>
+
+                                </Grid>
                             </Grid>
                         </Border>
                     </DataTemplate>

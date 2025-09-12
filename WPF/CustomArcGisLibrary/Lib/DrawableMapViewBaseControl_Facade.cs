@@ -19,6 +19,8 @@ namespace WPF.CustomArcGisLibrary.Lib
 
             if (!_geometryEditor.IsStarted)
             {
+                _selectedGraphic = null;
+
                 _geometryEditor.Start(GeometryType.Polygon);
             }
         }
@@ -35,18 +37,18 @@ namespace WPF.CustomArcGisLibrary.Lib
                 {
                     _selectedGraphic.Geometry = geometry;
                     NotifyCollectionChangedEventArgs arg = new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Replace, (object)_selectedGraphic, (object)_selectedGraphic, 0);
-                    _eventSystem.ViewEvent?.Invoke(this, arg);
+                    _eventSystem.onCollectionsChanged?.Invoke(this, arg);
                     _selectedGraphic.IsSelected = false;
                     _selectedGraphic.IsVisible = true;
                     _selectedGraphic = null;
                 }
                 else
                 {
-                    Graphic newGraphic = new Graphic(geometry, _polygonSymbol) { Attributes = { { "ID", NewItemName }, { "GID", TargetCollection.Id } } };
+                    Graphic newGraphic = new Graphic(geometry, _polygonSymbol) { Attributes = { { "ID", Guid.NewGuid().ToString() }, { "GID", TargetCollection.Id }, { "NAME", NewItemName } } };
                     TargetCollection.Graphics.Add(newGraphic);
                 }
             }
-
+            //  mapInteractionContext.AllowEditing = false;
         }
 
         public void SetEditMode(bool setEditMode)
@@ -65,7 +67,7 @@ namespace WPF.CustomArcGisLibrary.Lib
         {
             if (_geometryEditor.IsStarted && _geometryEditor.SelectedElement != null && _geometryEditor.SelectedElement.CanDelete)
             {
-
+                //   HierarchicalPrint.Hierarchical_Print(HierarchicalPrint.CustomControl, "CC", "SDPlusMap_KeyDown", "DeleteVertices");
                 _geometryEditor.DeleteSelectedElement();
             }
             else
@@ -85,7 +87,23 @@ namespace WPF.CustomArcGisLibrary.Lib
         public void DebugContext()
         {
 
+
             Debug.WriteLine("");
+
+
+            //foreach (var item in GraphicsOverlays)
+            //{
+            //    Graphic g = item.Graphics.First();
+            //    item.Graphics.Remove(g);
+            //}
+
+
+
+            NotifyCollectionChangedEventArgs arg = new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Replace, (object)_selectedGraphic, (object)_selectedGraphic, 0);
+            this._eventSystem.onCollectionsChanged?.Invoke(this, arg);
+
+            // _context.GetEditionsContext();
+
         }
     }
 }

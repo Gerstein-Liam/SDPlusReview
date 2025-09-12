@@ -13,7 +13,13 @@ namespace WPF.CustomArcGisLibrary.Lib
     {
 
         // Trigger: View      / Observer: ViewVodel
-        public EventHandler<NotifyCollectionChangedEventArgs> ViewEvent;     // --> Les collections ArcGis ne genere pas Event pour l'update,donc faut la generer soi meme depuis la vue                     
+
+        public Action<string, string> onSelection;
+        public EventHandler<NotifyCollectionChangedEventArgs> onCollectionsChanged;     // --> Les collections ArcGis ne genere pas Event pour l'update                     
+
+
+
+
         //Trigger: ViewModel / Observer: View
         public Action<Viewpoint> ViewPointChanged;
         public Action<GraphicsOverlay> TargetCollectionChanged;

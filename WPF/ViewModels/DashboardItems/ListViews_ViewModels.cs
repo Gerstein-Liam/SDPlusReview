@@ -4,178 +4,40 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Windows.Perception.Spatial.Preview;
+using WPF.Commands.Generics;
 using WPF.CustomArcGisLibrary.Lib;
 using WPF.Models;
-
 namespace WPF.ViewModels.DashboardItems
 {
-    public class ExploitationViewModel : ObservableObject
-    {
-        private string _name;
-        public string Name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-                OnPropertyChanged(nameof(Name));
-            }
-        }
-
-        //public PropriateryViewModel _proprietary;
-
-        private double _centerX;
-        public double CenterX
-        {
-            get
-            {
-                return _centerX;
-            }
-            set
-            {
-                _centerX = value;
-                OnPropertyChanged(nameof(CenterX));
-            }
-        }
-        private double _centerY;
-        public double CenterY
-        {
-            get
-            {
-                return _centerY;
-            }
-            set
-            {
-                _centerY = value;
-                OnPropertyChanged(nameof(CenterY));
-            }
-        }
-        private int _verticesCount;
-        public int VerticesCount
-        {
-            get
-            {
-                return _verticesCount;
-            }
-            set
-            {
-                _verticesCount = value;
-                OnPropertyChanged(nameof(VerticesCount));
-            }
-        }
-
-        private double _viewScale;
-        public double ViewScale
-        {
-            get
-            {
-                return _viewScale;
-            }
-            set
-            {
-                _viewScale = value;
-                OnPropertyChanged(nameof(ViewScale));
-            }
-        }
-
-        private double _Area;
-        public double Area
-        {
-            get
-            {
-                return _Area;
-            }
-            set
-            {
-                _Area = value;
-                OnPropertyChanged(nameof(Area));
-            }
-        }
-
-
-
-        public ExploitationViewModel(string name, PropriateryViewModel proprietary,
-                                        double CenterX,
-                                        double CenterY,
-                                        int VerticesCount,
-                                        double viewScale, double Area
-
-                                        )
-        {
-            Name = name;
-            //_proprietary = proprietary;
-            this.CenterX = CenterX;
-            this.CenterY = CenterY;
-            this.VerticesCount = VerticesCount;
-            ViewScale = viewScale;
-            this.Area = Area;
-        }
-    }
-    public class PropriateryViewModel : ObservableObject
-    {
-        private string _name;
-        public string Name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-                OnPropertyChanged(nameof(Name));
-            }
-        }
-        private int _exploitationsNumber;
-        public int ExploitationNumbers
-        {
-            get
-            {
-                return _exploitationsNumber;
-            }
-            set
-            {
-                _exploitationsNumber = value;
-                OnPropertyChanged(nameof(ExploitationNumbers));
-            }
-        }
-        private ExploitationViewModel _selectedExploitation;
-        public ExploitationViewModel SelectedExploitation
-        {
-            get
-            {
-                return _selectedExploitation;
-            }
-            set
-            {
-                _selectedExploitation = value;
-                OnPropertyChanged(nameof(SelectedExploitation));
-                onExploitationSelection?.Invoke(this, _selectedExploitation);
-            }
-        }
-        private readonly Action<PropriateryViewModel, ExploitationViewModel> onExploitationSelection;
-        public ObservableCollection<ExploitationViewModel> ExploitationList { get; set; }
-        public PropriateryViewModel(string name, int exploitationNumber, Action<PropriateryViewModel, ExploitationViewModel> onExploitationSelection)
-        {
-            ExploitationList = new ObservableCollection<ExploitationViewModel>();
-            this.Name = name;
-            this.onExploitationSelection = onExploitationSelection;
-        }
-        public void AddExploitation(ExploitationViewModel newExploitation)
-        {
-            // newExploitation._proprietary = this;
-            ExploitationList.Add(newExploitation);
-            this.ExploitationNumbers = ExploitationList.Count;
-        }
-    }
     public class ListViews_ViewModels : ObservableObject
     {
-        public ObservableCollection<PropriateryViewModel> ProprietaryList { get; set; }
-        private PropriateryViewModel _selectedProprietary;
-        public PropriateryViewModel SelectedProp
+
+
+        public ICommand ToggleDebugMode { get; }
+
+
+        private bool _showDebugData=false;
+        public bool ShowDebugData
+        {
+            get
+            {
+                return _showDebugData;
+            }
+            set
+            {
+                _showDebugData = value;
+                OnPropertyChanged(nameof(ShowDebugData));
+            }
+        }
+
+
+
+
+        public ObservableCollection<OwnerListItemViewModel> ProprietaryList { get; set; }
+        private OwnerListItemViewModel _selectedProprietary;
+        public OwnerListItemViewModel SelectedProp
         {
             get
             {
@@ -189,24 +51,69 @@ namespace WPF.ViewModels.DashboardItems
                 onProprietarySelection(_selectedProprietary);
             }
         }
-        private Action<PropriateryViewModel> onProprietarySelection;
-        public ListViews_ViewModels(Action<PropriateryViewModel> OnProprietarySelection)
+
+
+        private bool IgnoreViewCentering=false;
+
+        private PropertyListItemViewModel _selectedExploitation;
+        public PropertyListItemViewModel SelectedExploitation
+        {
+            get
+            {
+                return _selectedExploitation;
+            }
+            set
+            {
+                _selectedExploitation = value;
+                OnPropertyChanged(nameof(SelectedExploitation));
+                if(!IgnoreViewCentering) _onExploitationSelection?.Invoke(_selectedExploitation);
+                IgnoreViewCentering = false;
+            }
+        }
+        private readonly Action< PropertyListItemViewModel> _onExploitationSelection;
+        private Action<OwnerListItemViewModel> onProprietarySelection;
+        public ListViews_ViewModels(Action<OwnerListItemViewModel> onOwnerSelection, Action<PropertyListItemViewModel> onPropertySelection)
         {
             ProprietaryList = new();
-            onProprietarySelection = OnProprietarySelection;
+            onProprietarySelection = onOwnerSelection;
+            _onExploitationSelection = onPropertySelection;
+            ToggleDebugMode = new ActionCommand(() => {
+                
+                ShowDebugData = !ShowDebugData; 
+            
+            
+            });
+
         }
-        public void AddProprietry(Owner pItem, Action<PropriateryViewModel, ExploitationViewModel> onExploitationSelection)
+
+
+        public void SelectProperty(string ownerID, string propertyID) {
+
+            OwnerListItemViewModel? Target = ProprietaryList.Where(x => x.ID == ownerID).FirstOrDefault();
+            if (Target != null) { 
+            
+                   SelectedProp=Target;
+                PropertyListItemViewModel? property = Target.ExploitationList.Where(x => x.ID == propertyID).FirstOrDefault();
+                if (property != null) {
+                    IgnoreViewCentering=true;
+                    SelectedExploitation = property;
+                } 
+            }
+
+        }
+
+        public void AddProprietry(Owner pItem)
         {
-            PropriateryViewModel newProprierty = new PropriateryViewModel(pItem.ID, pItem.Properties.Count(), onExploitationSelection);
+            OwnerListItemViewModel newProprierty = new OwnerListItemViewModel(pItem.ID, pItem.OwnerName, pItem.Properties.Count());
             foreach (var ex in pItem.Properties)
             {
                 AddExploitation(newProprierty, ex);
             }
             ProprietaryList.Add(newProprierty);
         }
-        public void AddExploitation(PropriateryViewModel proprietayViewModel, Property exploitationItem)
+        public void AddExploitation(OwnerListItemViewModel proprietayViewModel, Property exploitationItem)
         {
-            proprietayViewModel.ExploitationList.Add(new ExploitationViewModel(exploitationItem.ID,
+            proprietayViewModel.ExploitationList.Add(new PropertyListItemViewModel(exploitationItem.ID, exploitationItem.OwnerID, exploitationItem.PropertyName,
                                                     proprietayViewModel,
                                                     exploitationItem.Center.X,
                                                     exploitationItem.Center.Y,
@@ -214,73 +121,45 @@ namespace WPF.ViewModels.DashboardItems
         }
         public void AddExploitationUsingID(string ProprietryID, Property exploitationItem)
         {
-
             exploitationItem.PrintMe();
-
-
-            PropriateryViewModel Target = ProprietaryList.Where(x => x.Name == ProprietryID).First();
+            OwnerListItemViewModel? Target = ProprietaryList.Where(x => x.ID == ProprietryID).FirstOrDefault();
             if (Target != null)
             {
                 AddExploitation(Target, exploitationItem);
             }
         }
-
         public void Reset()
         {
-
-
             this.ProprietaryList.Clear();
             this.SelectedProp = null;
-
-
-
         }
-
-
-        public void RemoveExploitation(PropriateryViewModel proprietaryViewModel, ExploitationViewModel exploitationItem)
+        public void RemoveExploitation(OwnerListItemViewModel ownerItem, PropertyListItemViewModel propertyItem)
         {
-            proprietaryViewModel.ExploitationList.Remove(exploitationItem);
-
-
+            ownerItem.ExploitationList.Remove(propertyItem);
         }
-
-        public void RemoveExploitationCloneAsEntry(PropriateryViewModel proprietaryViewModel, Property exploitationItemClone)
+        public void RemoveExploitationCloneAsEntry(OwnerListItemViewModel ownerItem, Property propertyItem)
         {
-            ExploitationViewModel original = proprietaryViewModel.ExploitationList.Where(x => x.Name == exploitationItemClone.ID).First();
-            if (RemoveExploitation != null) RemoveExploitation(proprietaryViewModel, original);
-
+            PropertyListItemViewModel? originalPropertyItem = ownerItem.ExploitationList.Where(x => x.ID == propertyItem.ID).FirstOrDefault();
+            if (originalPropertyItem != null) RemoveExploitation(ownerItem, originalPropertyItem);
         }
         public void UpdateExploitationUsingID(string ProprietryID, Property exploitationItem)
         {
-            PropriateryViewModel Target = ProprietaryList.Where(x => x.Name == ProprietryID).FirstOrDefault();
-
-
+            OwnerListItemViewModel? Target = ProprietaryList.Where(x => x.ID == ProprietryID).FirstOrDefault();
             if (Target != null)
             {
-                ExploitationViewModel t = Target.ExploitationList.Where(x => x.Name == exploitationItem.ID).First();
-
-
+                PropertyListItemViewModel t = Target.ExploitationList.Where(x => x.ID == exploitationItem.ID).First();
                 t.Area = exploitationItem.Area;
                 t.VerticesCount = exploitationItem.Vertices.Count();
             }
-
         }
-
-
-        public void RemoveExploitationUsingID(string ProprietryID, Property exploitationItem)
+        public void RemoveExploitationUsingID(string ownerID, Property propertyItem)
         {
-
-          //  HierarchicalPrint.Hierarchical_Print(HierarchicalPrint.ListView, "ListVM", "RemoveExploitationUsingID", $"eventData:{ProprietryID}:{exploitationItem.ID}");
-
-            PropriateryViewModel Target = ProprietaryList.Where(x => x.Name == ProprietryID).First();
+            //  HierarchicalPrint.Hierarchical_Print(HierarchicalPrint.ListView, "ListVM", "RemoveExploitationUsingID", $"eventData:{ownerID}:{propertyItem.ID}");
+            OwnerListItemViewModel? Target = ProprietaryList.Where(x => x.ID == ownerID).FirstOrDefault();
             if (Target != null)
             {
-                RemoveExploitationCloneAsEntry(Target, exploitationItem);
+                RemoveExploitationCloneAsEntry(Target, propertyItem);
             }
         }
-
-
-
-
     }
 }

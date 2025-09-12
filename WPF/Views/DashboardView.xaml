@@ -7,10 +7,15 @@
               xmlns:dashitems="clr-namespace:WPF.Views.DashboardItems"
                 xmlns:viewmodels="clr-namespace:WPF.ViewModels"
                 xmlns:esri="http://schemas.esri.com/arcgis/runtime/2013"
+                     xmlns:materialIcons="clr-namespace:Material.Icons.WPF;assembly=Material.Icons.WPF"
              xmlns:demomapview="clr-namespace:WPF.CustomArcGisLibrary.ExampleUsage"
+                      xmlns:converters="clr-namespace:WPF.Converters"
    mc:Ignorable="d"
    d:DataContext="{d:DesignInstance viewmodels:DashboardViewModel}"
              d:DesignHeight="1080" d:DesignWidth="1920">
+    <UserControl.Resources>
+        <converters:InverseBooleanToInvisibilityConverter x:Key="InverseBooleanToInvisibilityConverter"/>
+    </UserControl.Resources>
     <Grid Background="WhiteSmoke">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -20,56 +25,30 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Border HorizontalAlignment="Left" Width="400" CornerRadius="10"  Background="White" Margin="10 10 10 10" >
-                <Border.Style>
-                    <Style TargetType="Border">
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding ShowBackendPanel}" Value="true">
-                                <Setter Property="Visibility" Value="Visible"></Setter>
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding ShowBackendPanel}" Value="false">
-                                <Setter Property="Visibility" Value="Collapsed"></Setter>
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </Border.Style>
-                <Grid  >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Button Content="GET ALL FROM DB" Command="{Binding GetAllFromApiBt}"  Grid.Column="0" Background="DarkBlue"  HorizontalAlignment="Center"/>
-                    <Button Content="UPDATE ALL TO DB"  Command="{Binding SetAllToApiBt}"                 Grid.Column="1" Background="OrangeRed"   HorizontalAlignment="Center"/>
+            <Border HorizontalAlignment="Left" Width="400" CornerRadius="4"  Height="40"   Background="White" Margin="10 10 10 10" Padding="3" Visibility="{Binding ShowBackendPanel,Converter={StaticResource InverseBooleanToInvisibilityConverter}}">
+                <Grid >
+                    <Button Content="{materialIcons:MaterialIconExt Kind=Sync, Size=30}"  VerticalContentAlignment="Center" Command="{Binding SyncDBCommandBt}"  ToolTip="Sync with Db"   HorizontalAlignment="Stretch"/>
                 </Grid>
             </Border>
-            <dashitems:PropertiesListingView Grid.Row="1" x:Name="propertiesListingView" HorizontalAlignment="Left" Width="400" Margin="10 2 10 10" ></dashitems:PropertiesListingView>
+            <dashitems:PropertiesListingView Grid.Row="1" x:Name="propertiesListingView" DataContext="{Binding ListViewModel}" HorizontalAlignment="Left" Width="400" Margin="10 2 10 10" ></dashitems:PropertiesListingView>
         </Grid>
         <demomapview:MapViewCustomControl ViewModel="{Binding MapViewModel}"></demomapview:MapViewCustomControl>
         <Grid>
-            <Border HorizontalAlignment="Center" Background="WhiteSmoke" VerticalAlignment="Bottom" CornerRadius="2" Margin="0 0 0 50">
-                <Grid >
+            <Border HorizontalAlignment="Center" Background="WhiteSmoke" VerticalAlignment="Bottom" CornerRadius="2" Margin="0 0 0 10">
+                <Grid Width="900">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
+                    <dashitems:DebugPanelView DataContext="{Binding}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Visibility="{Binding ShowDebugPanel,Converter={StaticResource InverseBooleanToInvisibilityConverter}}" />
                     <dashitems:BackendStatusBannerView Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom"></dashitems:BackendStatusBannerView>
-                    <Grid>
-                        <Grid.Style>
-                            <Style TargetType="Grid">
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding ShowDebugPanel}" Value="true">
-                                        <Setter Property="Visibility" Value="Visible"></Setter>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding ShowDebugPanel}" Value="false">
-                                        <Setter Property="Visibility" Value="Collapsed"></Setter>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Grid.Style>
-                        <dashitems:DebugPanelView Grid.Row="0" DataContext="{Binding}" HorizontalAlignment="Center" VerticalAlignment="Bottom" ></dashitems:DebugPanelView>
+                    <Grid x:Name="ContextualArea"  HorizontalAlignment="Stretch" Background="Red" Height="200"  Grid.Row="2">
+                        <Label Content="ContextualArea" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
                     </Grid>
                 </Grid>
             </Border>
         </Grid>
+        <dashitems:SearchAdressView x:Name="AdressListContainer"   DataContext="{Binding SearchAdressViewModel}" Width="400" Grid.Row="0" HorizontalAlignment="Right" Margin="0 20 0 0"/>
     </Grid>
 </UserControl>

@@ -9,11 +9,11 @@ namespace WPF.Models
 {
     public class Property
     {
-        public string ID { get; set; }
-        public string OwnerID { get; set; }
+        public string ID { get; set; } = string.Empty;
+        public string OwnerID { get; set; } = string.Empty;
 
-        public string PropertyName { get; set; }
-        public string OwnerName { get; set; }
+        public string PropertyName { get; set; } = string.Empty;
+        public string OwnerName { get; set; } = string.Empty;
 
         public Map_Point? Center { get; set; }
 

@@ -13,7 +13,7 @@ namespace WPF.ViewModels
     {
 
 
-		private bool enableDebuggingMode;
+		private bool enableDebuggingMode=true;
 		public bool EnableDebuggingMode
 		{
 			get
@@ -29,7 +29,7 @@ namespace WPF.ViewModels
             }
 		}
 
-		private bool workWithoutConnection=true;
+		private bool workWithoutConnection;
 		public bool WorkWithoutConnection
 		{
 			get
@@ -51,7 +51,7 @@ namespace WPF.ViewModels
         {
            
             _settingsContexts = settingsContext;
-
+				
         }
     }
 }

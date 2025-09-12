@@ -15,36 +15,64 @@ namespace WPF.CustomArcGisLibrary.Lib
 {
     public partial class DrawableMapViewBaseControl : MapView
     {
+
         private ArcGisCustomEvents _eventSystem;
         public GraphicsOverlay TargetCollection { get; set; }
         private Graphic? _selectedGraphic;
         private GeometryEditor _geometryEditor;
+
         private bool _allowVertexCreation = true;
         private bool AllowModification = false;
+
+
         private SimpleFillSymbol _polygonSymbol;
+
         private MapInteractionContext mapInteractionContext;
+
         private Action<MapInteractionContext> _interactionRulesChanged;
+
         public void SetContext(IArcGisAbstractViewModelViewContext Context, Action<MapInteractionContext> InteractionRulesChanged)
         {
+
+
             base.Map = Context.MapView;
             base.GraphicsOverlays = Context.MapOverlayCollection;
+
+
+
             this.TargetCollection = Context.TargetCollection;
             this._eventSystem = Context.ArcGisCustomEvents;
+
+
             this._eventSystem.ViewPointChanged = OnViewChangeQuery;
             this._eventSystem.TargetCollectionChanged = OnTargetCollectionEvent;
             this._eventSystem.InteractionSetRulesChangedFromViewModel = OnEditionsRulesChange;
+
+
             this._interactionRulesChanged = InteractionRulesChanged;
         }
+
         public DrawableMapViewBaseControl()
         {
             this.GeoViewTapped += CustomMapView_GeoViewTapped;
             this._geometryEditor = this.GeometryEditor;
             var polygonLineSymbol = new SimpleLineSymbol(SimpleLineSymbolStyle.Dash, Color.Black, 1);
             _polygonSymbol = new SimpleFillSymbol(SimpleFillSymbolStyle.Solid, Color.FromArgb(70, 255, 0, 0), polygonLineSymbol);
+
             mapInteractionContext = new MapInteractionContext();
             mapInteractionContext.AllowEditing = false;
             mapInteractionContext.AllowAdding = false;
+
         }
+
+
+
+
+
+
+
+
+
         private async void CustomMapView_GeoViewTapped(object? sender, GeoViewInputEventArgs e)
         {
             Debug.Write("");
@@ -60,7 +88,10 @@ namespace WPF.CustomArcGisLibrary.Lib
                     _selectedGraphic = results.FirstOrDefault()?.Graphics?.FirstOrDefault();
                     if (_selectedGraphic != null)
                     {
-                        //HierarchicalPrint.Hierarchical_Print(HierarchicalPrint.CustomControl, "CC", "CustomMapView_GeoViewTapped", $"SELECTED:       graphic {_selectedGraphic.Attributes["ID"]} from {_selectedGraphic.GraphicsOverlay.Id}");
+
+                        string? graphicID = _selectedGraphic.Attributes["ID"].ToString();
+                        string? collectionID = _selectedGraphic.Attributes["GID"].ToString();
+                        this._eventSystem.onSelection(collectionID, graphicID);
                     }
                     else
                     {
@@ -69,7 +100,7 @@ namespace WPF.CustomArcGisLibrary.Lib
                 }
                 catch (Exception ex)
                 {
-                    // MessageBox.Show("Error: " + ex.Message, ex.GetType().Name, MessageBoxButton.OK, MessageBoxImage.Error);
+                   // MessageBox.Show("Error: " + ex.Message, ex.GetType().Name, MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 if (_selectedGraphic == null) return;
                 _selectedGraphic.IsSelected = true;
@@ -82,6 +113,7 @@ namespace WPF.CustomArcGisLibrary.Lib
             }
             else
             {
+             
                 if (_geometryEditor.SelectedElement == null)
                 {
                     IdentifyGeometryEditorResult result = await this.IdentifyGeometryEditorAsync(e.Position, 10);
@@ -103,5 +135,9 @@ namespace WPF.CustomArcGisLibrary.Lib
                 return;
             }
         }
+
+
+
+
     }
 }

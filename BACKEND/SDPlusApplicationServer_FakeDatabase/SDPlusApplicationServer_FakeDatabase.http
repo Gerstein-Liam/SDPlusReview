@@ -1,0 +1,9 @@
+@SDPlusApplicationServer_FakeDatabase_HostAddress = https://localhost:5001
+
+POST {{SDPlusApplicationServer_FakeDatabase_HostAddress}}/owner/
+Accept: application/json; charset=utf-8
+
+
+
+
+###

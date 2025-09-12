@@ -13,7 +13,7 @@ namespace WPF.CustomArcGisLibrary.ExampleUsage
         {
         }
 
-        public ConcreteMapViewModel(Action<EventData<Property>> OnGraphicCollectedChangedLister) : base(OnGraphicCollectedChangedLister)
+        public ConcreteMapViewModel(Action<EventData<Property>> OnGraphicCollectedChangedLister,Action<string, string> onSelection) : base(OnGraphicCollectedChangedLister, onSelection)
         {
         }
         public override Property ConvertBackGraphic(Graphic Item)
@@ -27,11 +27,15 @@ namespace WPF.CustomArcGisLibrary.ExampleUsage
                     Vertices.Add(new Map_Point(p.X, p.Y) { GeoIndex = VerticesIndex });
                     VerticesIndex++;
                 }
-                return new Property() { ID = Item.Attributes["ID"].ToString(), OwnerID = Item.Attributes["GID"].ToString(), Center = new Map_Point(Item.Geometry.Extent.GetCenter().X, Item.Geometry.Extent.GetCenter().Y), Vertices = Vertices, Area = Item.Geometry.Extent.Area() };
+
+
+                double snapeScale = Item.Geometry.Area() * ScaleFactor;
+                snapeScale=Math.Abs(snapeScale);
+                return new Property() { ID = Item.Attributes["ID"].ToString(), OwnerID = Item.Attributes["GID"].ToString(),PropertyName= Item.Attributes["NAME"].ToString(), Center = new Map_Point(Item.Geometry.Extent.GetCenter().X, Item.Geometry.Extent.GetCenter().Y), Vertices = Vertices, Area = Item.Geometry.Extent.Area(),SnapScale= snapeScale };
             }
             else
             {
-                return new Property() { ID = Item.Attributes["ID"].ToString(), OwnerID = Item.Attributes["GID"].ToString() };
+                return new Property() { ID = Item.Attributes["ID"].ToString(), OwnerID = Item.Attributes["GID"].ToString(), PropertyName = Item.Attributes["NAME"].ToString() };
 
             }
         }
@@ -54,7 +58,7 @@ namespace WPF.CustomArcGisLibrary.ExampleUsage
 
 
 
-            Graphic r = new Graphic(Polygon, polygonFillSymbol) { Attributes = { { "ID", Item.ID }, { "GID", Item.OwnerID } } };
+            Graphic r = new Graphic(Polygon, polygonFillSymbol) { Attributes = { { "ID", Item.ID }, { "GID", Item.OwnerID }, { "NAME", Item.PropertyName} } };
             Item.SetCenter(r.Geometry.Extent.GetCenter().X, r.Geometry.Extent.GetCenter().Y);
 
             Item.Area = Math.Abs(r.Geometry.Area());

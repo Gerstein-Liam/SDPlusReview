@@ -36,12 +36,19 @@ namespace WPF.Views
                 propertiesListingView.Visibility = propertiesListingView.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
             }
 
-            //if (Keyboard.Modifiers == ModifierKeys.Control && e.Key == Key.NumPad6)
-            //{
+            if (Keyboard.Modifiers == ModifierKeys.Control && e.Key == Key.NumPad2)
+            {
 
 
-            //    AdressArea.Visibility = AdressArea.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            //}
+                ContextualArea.Visibility = ContextualArea.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            }
+
+            if (Keyboard.Modifiers == ModifierKeys.Control && e.Key == Key.NumPad6)
+            {
+
+
+                AdressListContainer.Visibility = AdressListContainer.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            }
 
 
         }

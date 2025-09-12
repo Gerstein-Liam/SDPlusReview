@@ -8,9 +8,9 @@ namespace WPF.Models
 {
     public class Owner
     {
-        public string ID { get; set; }
+        public string ID { get; set; } = string.Empty;
 
-        public string OwnerName { get; set; }
+        public string OwnerName { get; set; } = string.Empty;
 
         public List<Property> Properties { get; set; }
 

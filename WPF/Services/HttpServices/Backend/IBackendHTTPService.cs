@@ -5,14 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using WPF.Models;
 
-namespace WPF.Services.HttpServices
+namespace WPF.Services.HttpServices.Backend
 {
  
     public interface IBackendHTTPService
     {
         Task<List<Owner>> GetAllOwner();
 
-      
         Task<string> PostAllOwner(List<Owner> owners);       //Une rustine comme je n'aurai pas le temps d'implenter des mises a jour(put/delete) individuel
 
         Task<string> DeleteOwner(Owner owner);               //TODO

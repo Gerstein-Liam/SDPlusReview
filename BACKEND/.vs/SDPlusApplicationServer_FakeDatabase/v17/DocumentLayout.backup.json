@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\BACKEND\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5728CA7E-7798-4552-AF95-635BE321DA6A}|SDPlusApplicationServer_FakeDatabase\\SDPlusApplicationServer_FakeDatabase.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\backend\\sdplusapplicationserver_fakedatabase\\fakedb\\fakedb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5728CA7E-7798-4552-AF95-635BE321DA6A}|SDPlusApplicationServer_FakeDatabase\\SDPlusApplicationServer_FakeDatabase.csproj|solutionrelative:sdplusapplicationserver_fakedatabase\\fakedb\\fakedb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5728CA7E-7798-4552-AF95-635BE321DA6A}|SDPlusApplicationServer_FakeDatabase\\SDPlusApplicationServer_FakeDatabase.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\backend\\sdplusapplicationserver_fakedatabase\\fakedb\\fakedbcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5728CA7E-7798-4552-AF95-635BE321DA6A}|SDPlusApplicationServer_FakeDatabase\\SDPlusApplicationServer_FakeDatabase.csproj|solutionrelative:sdplusapplicationserver_fakedatabase\\fakedb\\fakedbcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5728CA7E-7798-4552-AF95-635BE321DA6A}|SDPlusApplicationServer_FakeDatabase\\SDPlusApplicationServer_FakeDatabase.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\backend\\sdplusapplicationserver_fakedatabase\\controllers\\ownercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5728CA7E-7798-4552-AF95-635BE321DA6A}|SDPlusApplicationServer_FakeDatabase\\SDPlusApplicationServer_FakeDatabase.csproj|solutionrelative:sdplusapplicationserver_fakedatabase\\controllers\\ownercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5728CA7E-7798-4552-AF95-635BE321DA6A}|SDPlusApplicationServer_FakeDatabase\\SDPlusApplicationServer_FakeDatabase.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\backend\\sdplusapplicationserver_fakedatabase\\middlewares\\httpsniffermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5728CA7E-7798-4552-AF95-635BE321DA6A}|SDPlusApplicationServer_FakeDatabase\\SDPlusApplicationServer_FakeDatabase.csproj|solutionrelative:sdplusapplicationserver_fakedatabase\\middlewares\\httpsniffermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5728CA7E-7798-4552-AF95-635BE321DA6A}|SDPlusApplicationServer_FakeDatabase\\SDPlusApplicationServer_FakeDatabase.csproj|c:\\users\\liamg\\desktop\\sdpluspreparationrepos\\sdplusdemo_preparationrepos\\sdplusreviewdemocode\\backend\\sdplusapplicationserver_fakedatabase\\controllers\\propertycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5728CA7E-7798-4552-AF95-635BE321DA6A}|SDPlusApplicationServer_FakeDatabase\\SDPlusApplicationServer_FakeDatabase.csproj|solutionrelative:sdplusapplicationserver_fakedatabase\\controllers\\propertycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HTTPSnifferMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\BACKEND\\SDPlusApplicationServer_FakeDatabase\\Middlewares\\HTTPSnifferMiddleware.cs",
+              "RelativeDocumentMoniker": "SDPlusApplicationServer_FakeDatabase\\Middlewares\\HTTPSnifferMiddleware.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\BACKEND\\SDPlusApplicationServer_FakeDatabase\\Middlewares\\HTTPSnifferMiddleware.cs",
+              "RelativeToolTip": "SDPlusApplicationServer_FakeDatabase\\Middlewares\\HTTPSnifferMiddleware.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAgwDEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-11T11:04:45.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PropertyController.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\BACKEND\\SDPlusApplicationServer_FakeDatabase\\Controllers\\PropertyController.cs",
+              "RelativeDocumentMoniker": "SDPlusApplicationServer_FakeDatabase\\Controllers\\PropertyController.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\BACKEND\\SDPlusApplicationServer_FakeDatabase\\Controllers\\PropertyController.cs",
+              "RelativeToolTip": "SDPlusApplicationServer_FakeDatabase\\Controllers\\PropertyController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T17:43:08.103Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FakeDb.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\BACKEND\\SDPlusApplicationServer_FakeDatabase\\FakeDb\\FakeDb.cs",
+              "RelativeDocumentMoniker": "SDPlusApplicationServer_FakeDatabase\\FakeDb\\FakeDb.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\BACKEND\\SDPlusApplicationServer_FakeDatabase\\FakeDb\\FakeDb.cs",
+              "RelativeToolTip": "SDPlusApplicationServer_FakeDatabase\\FakeDb\\FakeDb.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwAYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T17:42:42.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FakeDbController.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\BACKEND\\SDPlusApplicationServer_FakeDatabase\\FakeDb\\FakeDbController.cs",
+              "RelativeDocumentMoniker": "SDPlusApplicationServer_FakeDatabase\\FakeDb\\FakeDbController.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\BACKEND\\SDPlusApplicationServer_FakeDatabase\\FakeDb\\FakeDbController.cs",
+              "RelativeToolTip": "SDPlusApplicationServer_FakeDatabase\\FakeDb\\FakeDbController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T17:42:22.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OwnerController.cs",
+              "DocumentMoniker": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\BACKEND\\SDPlusApplicationServer_FakeDatabase\\Controllers\\OwnerController.cs",
+              "RelativeDocumentMoniker": "SDPlusApplicationServer_FakeDatabase\\Controllers\\OwnerController.cs",
+              "ToolTip": "C:\\Users\\liamg\\Desktop\\SDPlusPreparationRepos\\SDPlusDemo_PreparationRepos\\SDPlusReviewDemoCode\\BACKEND\\SDPlusApplicationServer_FakeDatabase\\Controllers\\OwnerController.cs",
+              "RelativeToolTip": "SDPlusApplicationServer_FakeDatabase\\Controllers\\OwnerController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwB8AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T17:41:22.232Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

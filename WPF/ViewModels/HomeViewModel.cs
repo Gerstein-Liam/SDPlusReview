@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 namespace WPF.ViewModels
 {
-    public class HomeViewModel : ViewModelBase
+    public class HomeViewModel:ViewModelBase
     {
+
+
         private string _test;
         public string Test
         {
@@ -20,6 +23,9 @@ namespace WPF.ViewModels
                 OnPropertyChanged(nameof(Test));
             }
         }
+
+
+
         public HomeViewModel()
         {
             Test = "Home ViewModel est binded!";

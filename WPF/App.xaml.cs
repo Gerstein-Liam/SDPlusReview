@@ -9,7 +9,8 @@ using WPF.CustomArcGisLibrary.Lib;
 using WPF.Delegates;
 using WPF.Models;
 using WPF.Models.Mappers;
-using WPF.Services.HttpServices;
+using WPF.Services.HttpServices.Backend;
+using WPF.Services.HttpServices.GeoAdmin;
 using WPF.State.Context;
 using WPF.State.Navigators;
 using WPF.ViewModels;
@@ -17,9 +18,10 @@ using WPF.ViewModels.Factories;
 using SettingsContext = WPF.State.Context.SettingsContext;
 namespace WPF
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
+    /*https://learn.microsoft.com/en-us/dotnet/desktop/wpf/controls/checkbox-styles-and-templates
+      https://github.com/Microsoft/WPF-Samples/tree/main/Styles%20&%20Templates/IntroToStylingAndTemplating 
+     
+     */
     public partial class App : Application
     {
         protected override void OnStartup(StartupEventArgs e)
@@ -34,6 +36,7 @@ namespace WPF
         {
             IServiceCollection services = new ServiceCollection();
             //Il manque ici un truc
+            services.AddSingleton<GeoAdminFindAdresseHTTPClient>();
             services.AddSingleton<IBackendHTTPService, BackendHTTPService>();
             services.AddSingleton<IViewModelFactory, MainNavigationViewModelFactory>();
             services.AddSingleton<IModelsMapper, ModelsMapper>();
@@ -47,7 +50,8 @@ namespace WPF
             });
             services.AddSingleton<DashboardViewModel>(s => new DashboardViewModel(s.GetRequiredService<AbstractMapViewModel<List<Property>, Property>>()
                                                                                 , s.GetRequiredService<IApplicationContext<Settings>>(),
-                                                                                s.GetRequiredService<IBackendHTTPService>()
+                                                                                s.GetRequiredService<IBackendHTTPService>(),
+                                                                                   s.GetRequiredService<GeoAdminFindAdresseHTTPClient>()
                                                                                 ));
             services.AddSingleton<CreateViewModel<DashboardViewModel>>(s =>
             {
