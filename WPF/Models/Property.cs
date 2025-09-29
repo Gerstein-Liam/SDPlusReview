@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DOMAIN;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -15,6 +16,10 @@ namespace WPF.Models
         public string PropertyName { get; set; } = string.Empty;
         public string OwnerName { get; set; } = string.Empty;
 
+        public string Adress { get; set; } = string.Empty;
+
+        public string ZIP { get; set; } = string.Empty;
+
         public Map_Point? Center { get; set; }
 
         public double Area { get; set; }
@@ -29,6 +34,8 @@ namespace WPF.Models
                 return (Vertices?.Count ?? 0);
             }
         }
+
+        public SunRate SunRate { get; set; } = new SunRate();
 
         public void SetCenter(double x, double y)
         {

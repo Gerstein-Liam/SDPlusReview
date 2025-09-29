@@ -36,7 +36,7 @@ namespace WPF.ViewModels
         private void DumpAppData()
         {
 
-            Debug.WriteLine(JsonSerializer.Serialize(ApplicationData.Owners, new JsonSerializerOptions() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase, WriteIndented = true }));
+            Debug.WriteLine(JsonSerializer.Serialize(ApplicationData.OwnersList, new JsonSerializerOptions() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase, WriteIndented = true }));
         }
         private void DumpMapCollection()
         {

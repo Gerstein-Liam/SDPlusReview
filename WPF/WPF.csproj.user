@@ -8,10 +8,19 @@
     <Compile Update="Views\DashboardItems\BackendStatusBannerView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\DashboardItems\CurrentSelectionInfoView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\DashboardItems\DebugPanelView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\DashboardItems\OwnerEdit.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\DashboardItems\PropertiesListingView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DashboardItems\PropertyEdit.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\DashboardItems\SearchAdressView.xaml.cs">

@@ -12,14 +12,14 @@
                           BorderThickness="{TemplateBinding BorderThickness}">
                         <Grid>
                             <arcgiscustomlib:DrawableMapViewBaseControl x:Name="DrawableMapView"/>
-                            <Grid  VerticalAlignment="Top">
+                            <Grid  VerticalAlignment="Top" >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="2*"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid Grid.Column="1">
-                                    <Border x:Name="MainPanel"  Panel.ZIndex="2" CornerRadius="4"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10 0 60 10">
+                                    <Border x:Name="MainPanel"  Panel.ZIndex="2" CornerRadius="5" Opacity="0.9" Background="White" Margin="0 20 0 0" HorizontalAlignment="Stretch" VerticalAlignment="Top" >
                                         <Grid  Visibility="Visible" >
                                             <Grid>
                                                 <Grid.RowDefinitions>
@@ -81,9 +81,12 @@
                                                         </StackPanel>
                                                     </Grid>
                                                 </Border>
-                                                <Border Grid.Row="0"  Grid.Column="3" Opacity="0.0" Background="White" CornerRadius="10"   Margin="10">
+                                                <Border Grid.Row="0"  Grid.Column="3" Opacity="1" Background="White" CornerRadius="10"   Margin="10">
+
+                                                    
                                                     <Grid>
-                                                        <Button  Content="DEBUG CONTROL" Background="Orange" Grid.Row="0" x:Name="DebugBt" Grid.Column="1" />
+                                                        <Image Source="/Ressources/SDPlusLogo.png"/>
+                                                        <Button  Content="DEBUG CONTROL" Opacity="0" Background="Orange" Grid.Row="0" x:Name="DebugBt" Grid.Column="1" />
                                                     </Grid>
                                                 </Border>
                                             </Grid>

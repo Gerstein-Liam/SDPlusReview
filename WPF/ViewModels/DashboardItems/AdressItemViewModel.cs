@@ -18,13 +18,16 @@ namespace WPF.ViewModels.DashboardItems
             Coordinates = new();
         }
 
-        public AdressItemViewModel(string adress, Map_Point coordinates)
+        public AdressItemViewModel(string adress,string zip, Map_Point coordinates)
         {
             Adress = adress;
+            ZIP = zip;
             Coordinates = coordinates;
         }
 
         public string Adress { get; }
+
+        public string ZIP { get; }
 
         public Map_Point Coordinates { get; set; }
 

@@ -43,6 +43,28 @@ namespace WPF.Models.Mappers
             property.OwnerID = s.OwnerID;
             property.PropertyName = s.PropertyName;
             property.OwnerName = s.OwnerName;
+            property.Adress=s.Adress;
+            property.ZIP = s.ZIP;   
+            property.SunRate = new SunRate();
+            if (s.SunRate != null) {
+
+                property.SunRate.January = s.SunRate.January;
+                property.SunRate.February = s.SunRate.February;
+                property.SunRate.Mars = s.SunRate.Mars;
+                property.SunRate.April = s.SunRate.April;
+                property.SunRate.May = s.SunRate.May;
+                property.SunRate.Jun = s.SunRate.Jun;
+                property.SunRate.July = s.SunRate.July;
+                property.SunRate.August = s.SunRate.August;
+                property.SunRate.September = s.SunRate.September;
+                property.SunRate.October = s.SunRate.October;
+                property.SunRate.November = s.SunRate.November;
+                property.SunRate.December = s.SunRate.December;
+
+            }
+           
+
+
             if (s.Vertices != null)
             {
 
@@ -88,6 +110,7 @@ namespace WPF.Models.Mappers
             OwnerDto owner = new OwnerDto();
             owner.ID = s.ID;
             owner.OwnerName = s.OwnerName;
+            
             if (s.Properties != null)
             {
                 foreach (var propertyDto in s.Properties)
@@ -105,6 +128,24 @@ namespace WPF.Models.Mappers
             property.OwnerID = s.OwnerID;
             property.PropertyName = s.PropertyName;
             property.OwnerName = s.OwnerName;
+
+            property.Adress = s.Adress;
+            property.ZIP = s.ZIP;
+            property.SunRate = new SunRate();
+            property.SunRate.January=s.SunRate.January;
+            property.SunRate.February = s.SunRate.February;
+            property.SunRate.Mars = s.SunRate.Mars;
+            property.SunRate.April = s.SunRate.April;
+            property.SunRate.May = s.SunRate.May;
+            property.SunRate.Jun = s.SunRate.Jun;
+            property.SunRate.July = s.SunRate.July;
+            property.SunRate.August= s.SunRate.August;
+            property.SunRate.September = s.SunRate.September;
+            property.SunRate.October = s.SunRate.October;
+            property.SunRate.November = s.SunRate.November;
+            property.SunRate.December= s.SunRate.December;
+
+
             if (s.Vertices != null)
             {
 

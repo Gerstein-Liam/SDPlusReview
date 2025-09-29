@@ -46,7 +46,7 @@ namespace SDPlusApplicationServer_FakeDatabase.FakeDb
         public List<OwnerDto> GetAll()
         {
 
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             return _fakeDb.Owners;
         }
         public bool CreateOwner(OwnerDto Item)

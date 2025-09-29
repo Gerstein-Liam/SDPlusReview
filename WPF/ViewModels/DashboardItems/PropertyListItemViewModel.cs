@@ -48,6 +48,21 @@ namespace WPF.ViewModels.DashboardItems
             }
         }
 
+
+        private string _adress;
+        public string Adress
+        {
+            get
+            {
+                return _adress;
+            }
+            set
+            {
+                _adress = value;
+                OnPropertyChanged(nameof(Adress));
+            }
+        }
+
         private double _centerX;
         public double CenterX
         {
@@ -115,7 +130,7 @@ namespace WPF.ViewModels.DashboardItems
                                         double CenterX,
                                         double CenterY,
                                         int VerticesCount,
-                                        double viewScale, double Area
+                                        double viewScale, double Area,string adress
 
                                         )
         {
@@ -124,12 +139,13 @@ namespace WPF.ViewModels.DashboardItems
             OwnerID = ownerid;
             Name = name;
 
-            //_proprietary = proprietary;
+
             this.CenterX = CenterX;
             this.CenterY = CenterY;
             this.VerticesCount = VerticesCount;
             ViewScale = viewScale;
             this.Area = Area;
+            this.Adress = adress;
 
 
 

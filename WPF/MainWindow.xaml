@@ -9,7 +9,7 @@
         xmlns:viewmodels="clr-namespace:WPF.ViewModels"
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance viewmodels:MainWindowViewModel}"
-        Title="SDPlusDemo" Height="450" Width="800">
+        Title="SDPlusDemo" Height="1000" Width="1800">
     <Grid>
 
         <Grid.RowDefinitions>

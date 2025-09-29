@@ -10,14 +10,35 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Ressources\SDPlusLogo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dumpify" Version="0.6.6" />
     <PackageReference Include="Esri.ArcGISRuntime.WPF" Version="200.8.0" />
+    <PackageReference Include="LiveChartsCore.SkiaSharpView.WPF" Version="2.0.0-rc6.1" />
     <PackageReference Include="Material.Icons.WPF" Version="2.4.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.8" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DOMAIN\DOMAIN.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="CustomControl\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Ressources\SDPlusLogo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

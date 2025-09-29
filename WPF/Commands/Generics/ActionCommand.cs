@@ -13,14 +13,43 @@ namespace WPF.Commands.Generics
 
         private readonly Action _FctToExecute;
 
+        private readonly Predicate<object> _canExecute;
+
+
+
+
+        public void RaiseCanExecuteChanged() { 
+        
+        
+        CanExecuteChanged?.Invoke(this, EventArgs.Empty);
+        }
+        
         public ActionCommand(Action fctToExecute)
         {
             _FctToExecute = fctToExecute;
         }
 
+        public ActionCommand(Action fctToExecute, Predicate<object> canExecutePredicate)
+        {
+            _FctToExecute = fctToExecute;
+            _canExecute = canExecutePredicate;
+        }
+
         public bool CanExecute(object? parameter)
         {
-            return true;
+
+            if (_canExecute == null)
+            {
+
+                return true;
+            }
+            else
+            {
+                return true && _canExecute.Invoke(null);
+            
+            }
+            
+         
         }
 
         public void Execute(object? parameter)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -41,17 +42,21 @@ namespace WPF.ViewModels
 				workWithoutConnection = value;
 				OnPropertyChanged(nameof(WorkWithoutConnection));
                 _settingsContexts.ContextHolder.WorkWithoutDBConnection = workWithoutConnection;
-
+				//_logger.LogInformation($"WorkWithoutConnection{workWithoutConnection}");
                 _settingsContexts.RaiseEvent();
 			}
 		}
 
 		private readonly IApplicationContext<Settings> _settingsContexts;
-        public SettingsViewModel(IApplicationContext<Settings> settingsContext)
+
+		private readonly ILogger<SettingsViewModel> _logger;	
+        public SettingsViewModel(IApplicationContext<Settings> settingsContext/*, ILogger<SettingsViewModel> logger*/)
         {
            
             _settingsContexts = settingsContext;
-				
+            //_logger= logger;
+
+
         }
     }
 }

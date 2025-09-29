@@ -103,6 +103,7 @@ namespace WPF.CustomArcGisLibrary.ExampleUsage
         {
             _StartDrawButton.IsEnabled = Rules.AllowAdding;
             _SaveDrawButton.IsEnabled = Rules.AllowAdding;
+            _NewExploitationNameTxtBox.Text = Rules.DrawName;
         }
         private void SDPlusMap_KeyDown(object sender, KeyEventArgs e)
         {

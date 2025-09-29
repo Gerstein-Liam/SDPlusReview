@@ -20,60 +20,115 @@ using WPF.State.Context;
 using WPF.ViewModels.DashboardItems;
 namespace WPF.ViewModels
 {
-    public partial class DashboardViewModel : ViewModelBase
+
+    public enum UserRequestAction
+    {
+
+        AddOwner,
+        RemoveOwner,
+        EditOwner,
+        AddProperty,
+        RemoveProperty,
+        EditProperty,
+
+    }
+
+    public class UserRequestActionContext {
+
+        public string Action;
+        public string OwnerID;
+        public string PropertyID;
+        public Property currentPropertyEdited;
+
+    }
+
+
+
+    public partial class DashboardViewModel : ViewModelBase, IListingViewModelListener, IAbstactMapVMListener<Property>
     {
 
         public AsyncCommandBase SyncDBCommandBt { get; }
 
-  
+
+        public OwnerEditViewModel OwnerEditVM { get; }
+
+        public PropertyEditViewModel PropertyEditVM { get; }
+
 
 
         public FakeDb FakeDatabaseJson = new();
         public AppData ApplicationData = new AppData();
         public List<Owner> ownerList;
-        public ListViews_ViewModels ListViewModel { get; }
-        public AbstractMapViewModel<List<Property>, Property> MapViewModel { get; }
 
+
+        public AbstractMapViewModel<List<Property>, Property> MapViewModel { get; }
+        public ListViews_ViewModels ListViewModel { get; }
+        public CurrentSelectionInfoViewModel CurrentSelectionVM { get; }
         public SearchAdressViewModel SearchAdressViewModel { get; }
 
         private readonly IBackendHTTPService _backendHTTPService;
-        private readonly GeoAdminFindAdresseHTTPClient _geoAdminHttpClient;
-        public DashboardViewModel(AbstractMapViewModel<List<Property>, Property> MapViewModel, IApplicationContext<Settings> SettingsContext, IBackendHTTPService backendHTTPService, GeoAdminFindAdresseHTTPClient geoAdminHttpClient)
+
+        private Property PropertyAddedEdited;
+         
+
+        private UserRequestActionContext userRequestActionContext=new();
+        public DashboardViewModel(AbstractMapViewModel<List<Property>, Property> MapViewModel,
+                                  IApplicationContext<Settings> SettingsContext,
+                                  ListViews_ViewModels listingVM,
+                                  SearchAdressViewModel searchViewModel,
+                                  IBackendHTTPService backendHTTPService)
         {
             ClearAppDataBt = new ActionCommand(ClearAppData);
             DumpAppDataBt = new ActionCommand(DumpAppData);
             DumpMapCollectionlBt = new ActionCommand(DumpMapCollection);
             DumpListViewModelBt = new ActionCommand(DumpListViewCollection);
-            this.MapViewModel = MapViewModel;
-            this.MapViewModel.SubscriptOnCollectionChangedEvent(OnGraphicCollectionChanged);
-            this.MapViewModel.SubscriptOnSelectionEvent(onGraphicSelectionEvent);
-            _backendHTTPService = backendHTTPService;
-            _geoAdminHttpClient = geoAdminHttpClient;
+
             SettingsContext.onEventChangingApplicationContext += OnSettingsChange;
-            ListViewModel = new(onProprietarySelectionFromList, onExploitationSelectionFromList);
-            ListViewModel.ShowDebugData=true;
+            this.MapViewModel = MapViewModel;
+            this.MapViewModel.Subscribe(this);
+            ListViewModel = listingVM;
+            ListViewModel.Subcribe(this);
+            ListViewModel.ShowDebugData = true;
+
+            _backendHTTPService = backendHTTPService;
+
+
             SyncDBCommandBt = new SyncDbCommand(this, _backendHTTPService);
             SyncDBCommandBt.AllowExecution(true);
             SyncDBCommandBt.Execute(null);
-            SearchAdressViewModel= new SearchAdressViewModel(_geoAdminHttpClient); 
-          
+            SearchAdressViewModel = searchViewModel;
+            SearchAdressViewModel.Subcribe(OnAdressSelection);
+
+            CurrentSelectionVM = new CurrentSelectionInfoViewModel();
+            CurrentSelectionVM.ClearField();
+
+            OwnerEditVM = new OwnerEditViewModel(OnOwnerEditDialogClosed);
+            PropertyEditVM = new(OnDrawRequest);
+            
         }
+
+     
+       
+
+
         private void SetViewModelCollections()
         {
-            ApplicationData.Owners.Clear();
-            ApplicationData.Owners = ownerList;
-            ListViewModel.ProprietaryList.Clear();
+            //ApplicationData.OwnersList.Clear();
+            //ApplicationData.OwnersList = ownerList;
+            ListViewModel.Owners.Clear();
             MapViewModel?.MapOverlayCollection.Clear();
-      
-            foreach (var p in ApplicationData.Owners)
+
+            foreach (var p in ApplicationData.OwnersList)
             {
                 MapViewModel.CreateGraphicOverlay(p.ID, p.Properties.ToList());
             }
-            foreach (var item in ApplicationData.Owners)
+            foreach (var item in ApplicationData.OwnersList)
             {
                 ListViewModel.AddProprietry(item);
             }
             this.MapViewModel.SetAddPermissions(false);
         }
+
+        
     }
 }

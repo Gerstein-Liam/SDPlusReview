@@ -10,27 +10,41 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WPF.Models;
 
 namespace WPF.CustomArcGisLibrary.Lib
 {
+
+
+
+
+    public interface IAbstactMapVMListener<T> {
+
+        void onGraphicSelectionEvent(string overlayGroupID, string graphicID);
+        void OnGraphicCollectionChanged(EventData<T> eventData);
+    }
+    
+    
+    public class EventData<CustomGraphicItem>
+    {
+        public string EventType;
+        public string GroupID;
+        public string GraphicID;
+        public CustomGraphicItem Item;
+        public EventData(string eventType, string groupID, string graphicID, CustomGraphicItem Item)
+        {
+            EventType = eventType;
+            GroupID = groupID;
+            GraphicID = graphicID;
+            this.Item = Item;
+        }
+    }
+
     public abstract class AbstractMapViewModel<CustomGraphicCollection, CustomGraphicItem> :
                                                                      ObservableObject, IArcGisAbstractViewModelViewContext
                                                                                  where CustomGraphicCollection : IEnumerable<CustomGraphicItem>
     {
-        public class EventData<CustomGraphicItem>
-        {
-            public string EventType;
-            public string GroupID;
-            public string GraphicID;
-            public CustomGraphicItem Item;
-            public EventData(string eventType, string groupID, string graphicID, CustomGraphicItem Item)
-            {
-                EventType = eventType;
-                GroupID = groupID;
-                GraphicID = graphicID;
-                this.Item = Item;
-            }
-        }
+   
         private Map _map;
         public Map Map
         {
@@ -140,6 +154,19 @@ namespace WPF.CustomArcGisLibrary.Lib
 
         }
 
+        public void StartDraw(string DrawName)
+        {
+
+
+            _eventSystem.StartDraw?.Invoke(DrawName);
+        }
+        public void Subscribe(IAbstactMapVMListener<CustomGraphicItem> sub) {
+
+            onGraphicCollectionChangedEvent = sub.OnGraphicCollectionChanged;
+            _eventSystem.onSelection=sub.onGraphicSelectionEvent;
+            
+        }
+
         public void SubscriptOnSelectionEvent(Action<string, string> onSelection)
         {
 
@@ -147,12 +174,12 @@ namespace WPF.CustomArcGisLibrary.Lib
 
         }
 
-        public void SubscriptOnCollectionChangedEvent(Action<EventData<CustomGraphicItem>> OnGraphicCollectedChangedLister)
-        {
+        //public void SubscriptOnCollectionChangedEvent(Action<EventData<CustomGraphicItem>> OnGraphicCollectedChangedLister)
+        //{
 
-            onGraphicCollectionChangedEvent = OnGraphicCollectedChangedLister;
+        //    onGraphicCollectionChangedEvent = OnGraphicCollectedChangedLister;
 
-        }
+        //}
 
         private void EventHandler_CustomEvent(object sender, NotifyCollectionChangedEventArgs e)
         {

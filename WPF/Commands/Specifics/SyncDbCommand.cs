@@ -19,7 +19,7 @@ namespace WPF.Commands.Specifics
         private IBackendHTTPService _httpWebApiService;
         private Action _onQueryCompleted;
 
-        
+      
 
         public SyncDbCommand(DashboardViewModel viewModel, IBackendHTTPService httpWebApiService)
         {
@@ -35,20 +35,37 @@ namespace WPF.Commands.Specifics
         {
             try
             {
-
-                if (_viewModel.ApplicationData.Owners != null && _viewModel.ApplicationData.Owners.Count > 0)
+                Application.Current.Dispatcher.Invoke(() =>
                 {
-                    await _httpWebApiService.PostAllOwner(_viewModel.ApplicationData.Owners);
+                    Mouse.OverrideCursor = Cursors.Wait;
+                });
+
+                if (_viewModel.ApplicationData.OwnersList != null && _viewModel.ApplicationData.OwnersList.Count > 0)
+                {
+                    await _httpWebApiService.PostAllOwner(_viewModel.ApplicationData.OwnersList);
 
                 }
-                _viewModel.ownerList = await _httpWebApiService.GetAllOwner();
+               
+                
+                _viewModel.ListViewModel.SaveIndex();   
+                _viewModel.ApplicationData.OwnersList = await _httpWebApiService.GetAllOwner();
                 _onQueryCompleted?.Invoke();
-           
+
+                Application.Current.Dispatcher.Invoke(() =>
+                {
+                    Mouse.OverrideCursor = Cursors.Arrow;
+                });
+
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
-               
+
+                Application.Current.Dispatcher.Invoke(() =>
+                {
+                    Mouse.OverrideCursor = Cursors.Arrow;
+                });
+
             }
         }
     }

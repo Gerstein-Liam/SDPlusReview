@@ -8,6 +8,7 @@
         <ResourceDictionary Source="/CustomArcGisLibrary/ExampleUsage/MapViewCustomControl.xaml"/>
 
 
+
     </ResourceDictionary.MergedDictionaries>
 
 

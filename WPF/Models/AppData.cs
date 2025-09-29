@@ -9,58 +9,114 @@ namespace WPF.Models
 {
     public class AppData
     {
-        public List<Owner> Owners { get; set; } = new List<Owner>();
-        public void AddProprietry(Owner newProprietaire)
+        public List<Owner> OwnersList { get; set; } = new List<Owner>();
+        public void AddOwner(Owner owner)
         {
-            Owners.Add(newProprietaire);
+            OwnersList.Add(owner);
         }
-        public void AddExploitation(Owner Proprietaire, Property exploitationItem)
+
+
+        public void updateOwner(string ownerID,Owner owner)
         {
-            Proprietaire.Properties.Add(exploitationItem);
-        }
-        public void AddExploitationUsingID(string ProprietryID, Property exploitationItem)
-        {
-            exploitationItem.PrintMe();
-            Owner? Target = Owners.Where(x => x.ID == ProprietryID).FirstOrDefault();
-            if (Target != null)
+            Owner? Target = OwnersList.Where(x => x.ID == ownerID).FirstOrDefault();
+            if (Target!=null)
             {
-                AddExploitation(Target, exploitationItem);
+                Target.OwnerName=owner.OwnerName;
             }
         }
-        public void RemoveExploitation(Owner proprietary, Property exploitationItem)
+
+        public void DeleteOwner(string ownerID)
         {
-            proprietary.Properties.Remove(exploitationItem);
+            Owner? Target = OwnersList.Where(x => x.ID == ownerID).FirstOrDefault();
+            if (Target != null)
+            {
+                OwnersList.Remove(Target);  
+            }
         }
-        public void RemoveExploitationCloneAsEntry(Owner owner, Property property)
+
+
+
+
+        public void TransferProperty(string currentOwnerID, string targetOwnerID, string propertyID) {
+
+            Owner? targetOwner = OwnersList.Where(x => x.ID == targetOwnerID).FirstOrDefault();
+            Owner? currentOwner = OwnersList.Where(x => x.ID == currentOwnerID).FirstOrDefault();
+            if (currentOwner != null && targetOwner!=null) {
+
+                Property? p = currentOwner.Properties.Where(x => x.ID == propertyID).FirstOrDefault();
+                if (p != null) { 
+                p.OwnerID= targetOwnerID;   
+                targetOwner.Properties.Add(p);
+                currentOwner.Properties.Remove(p);
+                }
+            }
+
+           
+        
+        }
+
+        public void AddProperty(Owner owner, Property property)
+        {
+            
+            property.OwnerName = owner.OwnerName;   
+            owner.Properties.Add(property);
+        }
+        public void AddPropertyUsingOwnerID(string ownerID, Property property)
+        {
+            property.PrintMe();
+            Owner? Target = OwnersList.Where(x => x.ID == ownerID).FirstOrDefault();
+            if (Target != null)
+            {
+                AddProperty(Target, property);
+            }
+        }
+
+        public Property GetProperty(string ownerID, string propertyID) {
+
+            Owner? owner = OwnersList.Where(x => x.ID == ownerID).FirstOrDefault();
+            if (owner != null)
+            {
+                Property? property = owner.Properties.Where(x => x.ID == propertyID).FirstOrDefault();
+                return property;
+            }
+            return null;
+
+        }
+
+        public void RemoveProperty(Owner owner, Property property)
+        {
+            owner.Properties.Remove(property);
+        }
+        public void RemovePropertyUsingCloneAsEntry(Owner owner, Property property)
         {
             Property? original = owner.Properties.Where(x => x.ID == property.ID).FirstOrDefault();
-            if (RemoveExploitation != null) RemoveExploitation(owner, original!);
+            if (original != null) RemoveProperty(owner, original!);
         }
 
 
-        public void RemoveExploitationUsingID(string ownerID, Property Property)
+        public void RemovePropertyUsingOwnerID(string ownerID, Property property)
         {
 
-            Debug.WriteLine($"owner ID{ownerID} : propertyOwnerId{Property.OwnerID}");
+            Debug.WriteLine($"owner ID{ownerID} : propertyOwnerId{property.OwnerID}");
 
-            Owner? Owner = Owners.Where(x => x.ID == ownerID).FirstOrDefault();
+            Owner? Owner = OwnersList.Where(x => x.ID == ownerID).FirstOrDefault();
             if (Owner != null)
             {
-                RemoveExploitationCloneAsEntry(Owner, Property);
+                RemovePropertyUsingCloneAsEntry(Owner, property);
             }
         }
 
 
-        public void UpdateExploitationUsingID(string ProprietryID, Property exploitationItem)
+        public void UpdatePropertyUsingOwnerID(string ownerID, Property property)
         {
-            Owner? Target = Owners.Where(x => x.ID == ProprietryID).FirstOrDefault();
+            Owner? Target = OwnersList.Where(x => x.ID == ownerID).FirstOrDefault();
             if (Target != null)
             {
-                Property? t = Target.Properties.Where(x => x.ID == exploitationItem.ID).FirstOrDefault();
-                if (t != null) ReplaceContent(t, exploitationItem);
+                Property? t = Target.Properties.Where(x => x.ID == property.ID).FirstOrDefault();
+                if (t != null) UpdatePropertyData(t, property);
             }
         }
-        private void ReplaceContent(Property Target, Property Update)
+        private void UpdatePropertyData(Property Target, Property Update)
         {
             Target.Vertices = Update.Vertices;
             Target.Area = Update.Area;

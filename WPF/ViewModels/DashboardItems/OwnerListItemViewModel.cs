@@ -43,20 +43,20 @@ namespace WPF.ViewModels.DashboardItems
 
         public string ID { get; }
      
-        public ObservableCollection<PropertyListItemViewModel> ExploitationList { get; set; }
+        public ObservableCollection<PropertyListItemViewModel> Properties { get; set; }
         public OwnerListItemViewModel(string id, string name, int exploitationNumber)
         {
 
             ID = id;
-            ExploitationList = new ObservableCollection<PropertyListItemViewModel>();
+            Properties = new ObservableCollection<PropertyListItemViewModel>();
             this.Name = name;
            
         }
         public void AddExploitation(PropertyListItemViewModel newExploitation)
         {
             // newExploitation._proprietary = this;
-            ExploitationList.Add(newExploitation);
-            this.ExploitationNumbers = ExploitationList.Count;
+            Properties.Add(newExploitation);
+            this.ExploitationNumbers = Properties.Count;
         }
     }
 }

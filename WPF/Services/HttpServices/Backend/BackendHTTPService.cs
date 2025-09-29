@@ -1,4 +1,6 @@
 ﻿using DOMAIN;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,10 +19,18 @@ namespace WPF.Services.HttpServices.Backend
     {
 
         private readonly IModelsMapper _mapper;
+        private readonly string _baseUri;
 
-        public BackendHTTPService(IModelsMapper mapper)
+        private readonly string _apiBaseUri;
+
+        public BackendHTTPService(string apiBaseUri, IModelsMapper mapper, ILogger<BackendHTTPService> logger)
         {
             _mapper = mapper;
+
+            _apiBaseUri = apiBaseUri;
+            logger.LogInformation("Hello");
+
+
         }
 
         public Task<string> DeleteOwner(Owner owner)
@@ -35,6 +45,8 @@ namespace WPF.Services.HttpServices.Backend
 
         public async Task<List<Owner>> GetAllOwner()
         {
+
+          
             using (BackendHTTPClient client = new BackendHTTPClient())
             {
                 string uri = $"api/owner";

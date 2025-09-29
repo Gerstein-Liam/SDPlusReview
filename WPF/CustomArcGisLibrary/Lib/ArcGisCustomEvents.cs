@@ -24,6 +24,7 @@ namespace WPF.CustomArcGisLibrary.Lib
         public Action<Viewpoint> ViewPointChanged;
         public Action<GraphicsOverlay> TargetCollectionChanged;
         public Action<MapInteractionContext> InteractionSetRulesChangedFromViewModel;
+        public Action<string> StartDraw;
 
     }
 }

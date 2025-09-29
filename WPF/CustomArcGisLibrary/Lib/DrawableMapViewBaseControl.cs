@@ -50,6 +50,7 @@ namespace WPF.CustomArcGisLibrary.Lib
 
 
             this._interactionRulesChanged = InteractionRulesChanged;
+            this._eventSystem.StartDraw = DrawNewItemWithNameProvided;
         }
 
         public DrawableMapViewBaseControl()

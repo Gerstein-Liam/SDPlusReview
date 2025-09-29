@@ -14,6 +14,15 @@ namespace WPF.CustomArcGisLibrary.Lib
     public partial class DrawableMapViewBaseControl
     {
 
+
+        public void DrawNewItemWithNameProvided(string name)
+        {
+           mapInteractionContext.DrawName=name;
+            this._interactionRulesChanged?.Invoke(mapInteractionContext);
+            DrawNewItem();
+        }
+
+
         public void DrawNewItem()
         {
 

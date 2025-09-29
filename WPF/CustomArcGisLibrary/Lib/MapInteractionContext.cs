@@ -13,5 +13,7 @@ namespace WPF.CustomArcGisLibrary.Lib
 
         public bool AllowEditing { get; set; }
 
+        public string DrawName { get; set; }    
+
     }
 }

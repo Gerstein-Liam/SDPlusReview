@@ -13,7 +13,7 @@
 
 
 
-    <Border Background="White" CornerRadius="10" BorderThickness="0.5" BorderBrush="{StaticResource BrushPrimary2}" >
+    <Border Background="White" CornerRadius="10" BorderThickness="0.5" Opacity="0.95" BorderBrush="{StaticResource BrushPrimary2}" >
         <Grid HorizontalAlignment="Stretch"  Panel.ZIndex="2" Margin="10 10 10 10"  x:Name="ListContainer">
             <Grid.RowDefinitions >
                 <RowDefinition Height="auto"/>
@@ -30,21 +30,30 @@
 
                 </Grid.ColumnDefinitions>
                 <Label Content="ADRESSES" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
-                <TextBox  Grid.Column="1"  Text="{Binding AdressToSearch}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                <TextBox  Grid.Column="1"  Text="{Binding AdressToSearch,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
+
+                    <TextBox.InputBindings>
+                        <KeyBinding Command="{Binding SearchAdressDBCommandBt}" Key="Enter" />
+                    </TextBox.InputBindings>
+
+                </TextBox>
                 <Button  Content="{materialIcons:MaterialIconExt Kind=Search}" Command="{Binding SearchAdressDBCommandBt}"  Grid.Column="2"  HorizontalAlignment="Right"/>
 
             </Grid>
             <ListView Grid.Row="2" ItemsSource="{Binding SearchResults}" ScrollViewer.HorizontalScrollBarVisibility="Hidden"  SelectedItem="{Binding SelectedAdress}"   >
                 <ListView.ItemTemplate>
                     <DataTemplate >
-                        <Border Background="LightBlue" Width="{Binding ActualWidth,ElementName=AdressListContainer}" Margin="10">
+                        <Border  Width="{Binding ActualWidth,ElementName=AdressListContainer}" Margin="10">
                             <Grid  >
-                                <Grid.RowDefinitions >
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="auto"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="{Binding Adress}"/>
-                                <TextBox Grid.Row="1" Text="{Binding CoordinatesAsString ,Mode=OneWay}"/>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" FontSize="10" VerticalAlignment="Center" Text="{Binding Adress}"/>
+                                <Label Content="|" Grid.Column="1"/>
+                                <TextBlock Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Stretch"  FontSize="10" FontStyle="Italic" Text="{Binding ZIP}"/>
+                                <!--<TextBox Grid.Row="1" Text="{Binding CoordinatesAsString ,Mode=OneWay}"/>-->
                             </Grid>
                         </Border>
                     </DataTemplate>

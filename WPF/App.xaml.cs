@@ -1,6 +1,9 @@
 ﻿using Esri.ArcGISRuntime;
 using Esri.ArcGISRuntime.Security;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using System.Configuration;
 using System.Data;
 using System.Windows;
@@ -14,7 +17,9 @@ using WPF.Services.HttpServices.GeoAdmin;
 using WPF.State.Context;
 using WPF.State.Navigators;
 using WPF.ViewModels;
+using WPF.ViewModels.DashboardItems;
 using WPF.ViewModels.Factories;
+
 using SettingsContext = WPF.State.Context.SettingsContext;
 namespace WPF
 {
@@ -22,45 +27,101 @@ namespace WPF
       https://github.com/Microsoft/WPF-Samples/tree/main/Styles%20&%20Templates/IntroToStylingAndTemplating 
      
      */
+
+    
     public partial class App : Application
     {
+
+
+        private readonly IHost _host;
+
+
+        public App()
+        {
+            _host = CreateHostBuilder().Build();
+        }
+
+
+        //https://learn.microsoft.com/en-us/ef/core/cli/dbcontext-creation?tabs=dotnet-core-cli
+        public static IHostBuilder CreateHostBuilder(string[] args = null)
+        {
+
+            return Host.CreateDefaultBuilder(args).ConfigureAppConfiguration(c => c.AddJsonFile("appsettings.json")).
+                
+                ConfigureServices((context,services) =>
+            {
+                services.AddSingleton<GeoAdminFindAdresseHTTPClient>();
+
+
+                string baseuri = context.Configuration.GetSection("Backend").GetSection("baseUri").Value;
+                services.AddSingleton<IBackendHTTPService>(
+                   
+                                            s=> new BackendHTTPService(baseuri,s.GetRequiredService<IModelsMapper>(),s.GetRequiredService<ILogger<BackendHTTPService>>())
+                    );
+                services.AddSingleton<IViewModelFactory, MainNavigationViewModelFactory>();
+                services.AddSingleton<IModelsMapper, ModelsMapper>();
+                services.AddSingleton<IApplicationContext<Settings>, SettingsContext>();
+
+
+
+                services.AddSingleton<SearchAdressViewModel>();
+                services.AddSingleton<ListViews_ViewModels>();
+
+
+                
+           
+              
+                services.AddSingleton<AbstractMapViewModel<List<Property>, Property>, ConcreteMapViewModel>();
+                services.AddSingleton<CreateViewModel<HomeViewModel>>(() => new HomeViewModel());
+                services.AddSingleton<SettingsViewModel>(s => new SettingsViewModel(s.GetRequiredService<IApplicationContext<Settings>>()));
+                services.AddSingleton<CreateViewModel<SettingsViewModel>>(s =>
+                {
+                    return () => s.GetRequiredService<SettingsViewModel>();
+                });
+                services.AddSingleton<DashboardViewModel>(s => new DashboardViewModel(s.GetRequiredService<AbstractMapViewModel<List<Property>, Property>>()
+                                                                                    , s.GetRequiredService<IApplicationContext<Settings>>(),
+                                                                                       s.GetRequiredService<ListViews_ViewModels>(),
+                                                                                    s.GetRequiredService<SearchAdressViewModel>(),
+                                                                                    s.GetRequiredService<IBackendHTTPService>()
+                                                                                    ));
+                services.AddSingleton<CreateViewModel<DashboardViewModel>>(s =>
+                {
+                    return () => s.GetRequiredService<DashboardViewModel>();
+                });
+                // services.AddSingleton<ViewModelDelegateRenavigator<HomeViewModel>>();
+                services.AddSingleton<INavigator, Navigator>();
+                services.AddScoped<MainWindowViewModel>();
+                services.AddScoped<MainWindow>(s => new MainWindow(s.GetRequiredService<MainWindowViewModel>()));
+
+
+            }).ConfigureLogging(s=> { s.ClearProviders();  s.AddDebug(); });
+
+        }
+
         protected override void OnStartup(StartupEventArgs e)
         {
+            
+            
             InitArcGis();
-            IServiceProvider serviceProvider = CreateServiceProvider();
-            Window window = serviceProvider.GetRequiredService<MainWindow>();
+            _host.Start();
+            Window window = _host.Services.GetRequiredService<MainWindow>();
             window.Show();
             base.OnStartup(e);
         }
+
+
+        protected override async void OnExit(ExitEventArgs e)
+        {
+            await _host.StopAsync();
+            _host.Dispose();
+            base.OnExit(e);
+        }
+        
         private IServiceProvider CreateServiceProvider()
         {
             IServiceCollection services = new ServiceCollection();
             //Il manque ici un truc
-            services.AddSingleton<GeoAdminFindAdresseHTTPClient>();
-            services.AddSingleton<IBackendHTTPService, BackendHTTPService>();
-            services.AddSingleton<IViewModelFactory, MainNavigationViewModelFactory>();
-            services.AddSingleton<IModelsMapper, ModelsMapper>();
-            services.AddSingleton<IApplicationContext<Settings>, SettingsContext>();
-            services.AddSingleton<AbstractMapViewModel<List<Property>, Property>, ConcreteMapViewModel>();
-            services.AddSingleton<CreateViewModel<HomeViewModel>>(() => new HomeViewModel());
-            services.AddSingleton<SettingsViewModel>(s => new SettingsViewModel(s.GetRequiredService<IApplicationContext<Settings>>()));
-            services.AddSingleton<CreateViewModel<SettingsViewModel>>(s =>
-            {
-                return () => s.GetRequiredService<SettingsViewModel>();
-            });
-            services.AddSingleton<DashboardViewModel>(s => new DashboardViewModel(s.GetRequiredService<AbstractMapViewModel<List<Property>, Property>>()
-                                                                                , s.GetRequiredService<IApplicationContext<Settings>>(),
-                                                                                s.GetRequiredService<IBackendHTTPService>(),
-                                                                                   s.GetRequiredService<GeoAdminFindAdresseHTTPClient>()
-                                                                                ));
-            services.AddSingleton<CreateViewModel<DashboardViewModel>>(s =>
-            {
-                return () => s.GetRequiredService<DashboardViewModel>();
-            });
-            // services.AddSingleton<ViewModelDelegateRenavigator<HomeViewModel>>();
-            services.AddSingleton<INavigator, Navigator>();
-            services.AddScoped<MainWindowViewModel>();
-            services.AddScoped<MainWindow>(s => new MainWindow(s.GetRequiredService<MainWindowViewModel>()));
+        
             return services.BuildServiceProvider();
         }
         private void InitArcGis()

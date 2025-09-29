@@ -5,11 +5,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WPF.Models;
 
 namespace WPF.CustomArcGisLibrary.Lib
 {
     public partial class DrawableMapViewBaseControl
     {
+
+
+ 
+        
         private void OnViewChangeQuery(Viewpoint viewpoint)
         {
             this.SetViewpoint(viewpoint);

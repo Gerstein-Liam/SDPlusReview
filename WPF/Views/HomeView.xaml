@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:WPF.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="Yellow">
-        <Label Grid.Row="0" Content="{Binding Test}" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+    <Grid >
+        <Image Source="/Ressources/SDPlusLogo.png" Width="400" VerticalAlignment="Top" Margin="0 340 0 0"/>
+        <Label Grid.Row="0" FontSize="20" Content="DEMO GUICHET CARTOGRAPHIQUE DESKTOP WPF: GERSTEIN LIAM" VerticalAlignment="Center" HorizontalAlignment="Center"/>
     </Grid>
 </UserControl>
